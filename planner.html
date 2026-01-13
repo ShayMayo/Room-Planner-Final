@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>2D Room Planner</title>
+    <link rel="stylesheet" href="planner.css">
+</head>
+<body>
+
+    <header>
+        <h1>2D Room Planner</h1>
+    </header>
+
+    <main>
+        
+        <aside id="sidebar" style="width: 200px; padding: 20px;">
+            
+            <h3>Room Settings</h3>
+            <label>Wall Color:</label>
+            <br>
+            <button id="EA7B7B" class="wallColorPicker"></button>
+            <button id="D25353" class="wallColorPicker"></button>
+            <button id="FFEAD3" class="wallColorPicker"></button>
+            <button id="white" class="wallColorPicker"></button>
+            <br>
+            <button id="DAD887" class="wallColorPicker"></button>
+            <button id="C5D89D" class="wallColorPicker"></button>
+            <button id="F6F0D7" class="wallColorPicker"></button>
+            <button id="grey" class="wallColorPicker"></button>
+
+            <h3>Furniture</h3> <div class="furniture-list">
+                <div class="furniture-card" draggable="true" data-size="2" data-icon = "🛋️" data-price = "800">🛋️ Sofa</div>
+                <div class="furniture-card" draggable="true" data-size="1" data-icon = "🪑" data-price = "150">🪑 Chair</div>
+                <div class="furniture-card" draggable="true" data-size="2" data-icon = "🛏️" data-price = "1500">🛏️ Bed</div>
+                <div class="furniture-card" draggable="true" data-size="1" data-icon = "🪴" data-price = "80">🪴 Plant</div>
+            </div>
+            <button id="resetBtn" class="button">Clear All</button>
+        </aside>
+
+        <div id="planner-grid">
+            <div id="room-grid" class="grid-container">
+                
+            </div>    
+        </div>
+        <div class = "receipt-section">
+            <h3>Receipt Summary</h3>
+            <p>Total cost: <span id = "total-price"></span></p>
+        </div>
+    </main>
+    <script src="planner.js"></script>
+</body>
+</html>
