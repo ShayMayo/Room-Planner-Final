@@ -91,6 +91,20 @@ main {
     gap: 15px;
 }
 
+.receipt-list{
+list-style: none;
+padding: 0;
+margin: 0;
+flex-grow: 1;
+}
+.receipt-list li{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid black;
+  font-size: 0.95 rem;
+}
+
 .reset-button {
     margin-top: auto;
     padding: 12px;
