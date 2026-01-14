@@ -1,0 +1,581 @@
+/* about.css */
+/* 1) Inherit the exact look & feel of the Home page */
+@import url("./index.css");
+
+/* 2) Page background like your screenshots */
+body{
+  background-color: #f7f3ee;
+}
+
+/* Make sure the sticky navbar stays identical */
+.mainNavbar{
+  background-color: #eaf4ee;
+}
+
+/* =========================
+   About Hero (Top section)
+========================= */
+.hero{
+  padding: 90px 20px 50px;
+  text-align: center;
+  background-color: #f7f3ee;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-inner{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 64px;
+  letter-spacing: -1px;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle{
+  color: #6b7280;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-links{
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background-color: #2f5d4a;
+  color: #ffffff;
+}
+
+.btn-primary:hover{
+  background-color: #2a5242;
+}
+
+.btn-secondary{
+  background-color: transparent;
+  color: #355f4b;
+  border-color: #e7e1d8;
+}
+
+.btn-secondary:hover{
+  background-color: #ffffff;
+}
+
+.section-divider{
+  border: none;
+  border-top: 1px solid #e7e1d8;
+  margin: 0;
+}
+
+/* =========================
+   Sections common
+========================= */
+.section{
+  padding: 80px 20px;
+  background-color: #f7f3ee;
+}
+
+.section-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 44px;
+  color: #1f2937;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle{
+  color: #6b7280;
+  max-width: 720px;
+  margin: 0 auto 26px;
+  font-size: 16px;
+}
+
+.section-text{
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 14px;
+  max-width: 650px;
+}
+
+.center{
+  text-align: center;
+}
+
+.brand-inline{
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* =========================
+   Mission layout (2 columns)
+========================= */
+.section-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.pill-green{
+  background-color: #eaf4ee;
+  color: #2f5d4a;
+}
+
+.side-card{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card{
+  width: min(520px, 100%);
+  min-height: 420px;
+  background-color: #fdfbf7;
+  border: 1px solid #e7e1d8;
+  border-radius: 26px;
+  padding: 34px 26px;
+  position: relative;
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background-color: #f3d9cf;
+  opacity: 0.7;
+}
+
+.card-icon{
+  width: 120px;
+  height: auto;
+  margin: 70px auto 14px;
+}
+
+.card-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+  color: #1f2937;
+}
+
+.card-text{
+  text-align: center;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.card-meta{
+  margin-top: 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.meta-line{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.meta-label{
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* =========================
+   Values grid (6 cards)
+========================= */
+.cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.value-card{
+  background-color: #fdfbf7;
+  border: 1px solid #e7e1d8;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.icon-badge{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background-color: #eaf4ee;
+  color: #2f5d4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.value-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 22px;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.value-text{
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* =========================
+   Table styles
+========================= */
+.table-wrap{
+  margin-top: 34px;
+  background-color: #fdfbf7;
+  border: 1px solid #e7e1d8;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.mini-title{
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.data-table caption{
+  text-align: left;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.data-table th,
+.data-table td{
+  padding: 12px;
+  border-top: 1px solid #e7e1d8;
+  text-align: left;
+  font-size: 14px;
+}
+
+.data-table thead th{
+  border-top: none;
+  background-color: #eaf4ee;
+  color: #1f2937;
+  font-weight: 800;
+}
+
+/* =========================
+   Features (3 columns)
+========================= */
+.features-grid{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card{
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.feature-icon{
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  background-color: #eaf4ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.feature-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 22px;
+  color: #1f2937;
+  margin: 0 0 10px;
+}
+
+.feature-text{
+  max-width: 340px;
+  margin: 0 auto 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.feature-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #6b7280;
+  display: grid;
+  gap: 6px;
+}
+
+.feature-list li::before{
+  content: "• ";
+}
+
+.jump-links{
+  margin-top: 26px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.jump-links .link{
+  color: #2f5d4a;
+  text-decoration: none;
+}
+
+.jump-links .link:hover{
+  text-decoration: underline;
+}
+
+.link-sep{
+  margin: 0 10px;
+}
+
+/* =========================
+   Form (Get updates)
+========================= */
+.form{
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.form-fieldset{
+  border: 1px solid #e7e1d8;
+  border-radius: 18px;
+  padding: 18px;
+  background-color: #fdfbf7;
+  margin: 0 0 16px;
+}
+
+.form-legend{
+  padding: 0 8px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.form-row{
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.form-row label{
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.input{
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #e7e1d8;
+  background-color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus{
+  border-color: #2f5d4a;
+}
+
+.form-actions{
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* =========================
+   Footer small fixes (your footer already styled in index.css)
+========================= */
+.footerLinks{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li{
+  margin-bottom: 10px;
+}
+
+.socialMediaIcons{
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.socialMediaIcons img{
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px){
+  .section-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .side-card{
+    justify-content: center;
+  }
+
+  .cards-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-title{
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 480px){
+  .cards-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero-links{
+    width: 100%;
+  }
+
+  .btn{
+    width: 100%;
+  }
+}
+/*Features (cards layout)*/
+.features-grid{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card{
+  background-color: #fdfbf7;
+  border: 1px solid #e7e1d8;
+  border-radius: 22px;
+  padding: 32px 22px;
+  text-align: center;
+}
+
+.feature-icon{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  background-color: #eaf4ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.feature-title{
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 22px;
+  color: #1f2937;
+  margin: 0 0 10px;
+}
+
+.feature-text{
+  max-width: 320px;
+  margin: 0 auto 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.feature-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #6b7280;
+  display: grid;
+  gap: 6px;
+}
+.footer-contact ul,
+.footer-contact li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* spacing between lines */
+.footer-contact li{
+  margin-bottom: 10px;
+}
+.feature-list li::before{
+  content: "• ";
+}
+@media (max-width: 900px){
+  .features-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
