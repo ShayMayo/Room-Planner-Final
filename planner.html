@@ -6,36 +6,94 @@
     <link rel="stylesheet" href="planner.css">
 </head>
 <body>
+    <header class="mainNavbar">
 
-    <header>
-        <h1>2D Room Planner</h1>
+        <div class="navLogo">
+            <span class="logoText">RoomCraft Planner</span>
+        </div>
+
+        <button class="hamburgerBtn" id="hamburgerBtn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav>
+            <ul class="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="planner.html">Room Planner</a></li>
+                <li><a href="contactUs.html">Contact</a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <main>
-        
-        <aside id="sidebar" style="width: 200px; padding: 20px;">
-            
-            <h3>Room Settings</h3>
-            <label>Wall Color:</label>
-            <br>
-            <button id="EA7B7B" class="wallColorPicker"></button>
-            <button id="D25353" class="wallColorPicker"></button>
-            <button id="FFEAD3" class="wallColorPicker"></button>
-            <button id="white" class="wallColorPicker"></button>
-            <br>
-            <button id="DAD887" class="wallColorPicker"></button>
-            <button id="C5D89D" class="wallColorPicker"></button>
-            <button id="F6F0D7" class="wallColorPicker"></button>
-            <button id="grey" class="wallColorPicker"></button>
+        <aside id="sidebar">
+    <h3>Room Settings</h3>
 
-            <h3>Furniture</h3> <div class="furniture-list">
-                <div class="furniture-card" draggable="true" data-size="2" data-icon = "🛋️" data-price = "800">🛋️ Sofa</div>
-                <div class="furniture-card" draggable="true" data-size="1" data-icon = "🪑" data-price = "150">🪑 Chair</div>
-                <div class="furniture-card" draggable="true" data-size="2" data-icon = "🛏️" data-price = "1500">🛏️ Bed</div>
-                <div class="furniture-card" draggable="true" data-size="1" data-icon = "🪴" data-price = "80">🪴 Plant</div>
-            </div>
-            <button id="resetBtn" class="button">Clear All</button>
-        </aside>
+    <h3>Wall Color:</h3>
+    <div class="color-picker-container">
+        <div class="wallColorPicker" id="EA7B7B"></div>
+        <div class="wallColorPicker" id="D25353"></div>
+        <div class="wallColorPicker" id="FFEAD3"></div>
+        <div class="wallColorPicker" id="white"></div>
+        <div class="wallColorPicker" id="DAD887"></div>
+        <div class="wallColorPicker" id="grey"></div>
+        <div class="wallColorPicker" id="C5D89D"></div>
+        <div class="wallColorPicker" id="F6F0D7"></div>
+    </div>
+
+    <h3>Furniture Library</h3>
+    <div class="furniture-library-grid">
+        <div class="furniture-card" draggable="true" data-icon="🛋️" data-size="2" data-price="2450" data-name="Modern 3-Seat Sofa">
+            <span>🛋️</span>
+            <div class="card-label">Sofa (3-Seat)</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🛋️" data-size="2" data-price="1850" data-name="Classic Sofa">
+            <span>🛋️</span>
+            <div class="card-label">Classic Sofa</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🍽️" data-size="2" data-price="1399" data-name="Oak Dining Table">
+            <span>🍽️</span>
+            <div class="card-label">Dining Table</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🛏️" data-size="2" data-price="3580" data-name="Premium King Bed">
+            <span>🛏️</span>
+            <div class="card-label">King Bed</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="☕" data-size="1" data-price="2120" data-name="Wooden Coffee Table">
+            <span>☕</span>
+            <div class="card-label">Coffee Table</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🪑" data-size="1" data-price="675" data-name="Scandinavian Armchair">
+            <span>🪑</span>
+            <div class="card-label">Armchair</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🪴" data-size="1" data-price="360" data-name="Ceramic Plant Pot">
+            <span>🪴</span>
+            <div class="card-label">Plant Pot</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="📚" data-size="1" data-price="135" data-name="Designer Book Set">
+            <span>📚</span>
+            <div class="card-label">Books</div>
+        </div>
+
+        <div class="furniture-card" draggable="true" data-icon="🚪" data-size="1" data-price="450" data-name="Modern Interior Door">
+            <span>🚪</span>
+            <div class="card-label">Modern Door</div>
+        </div>
+    </div>
+    
+</aside>
 
         <div id="planner-grid">
             <div id="room-grid" class="grid-container">
@@ -45,7 +103,9 @@
         <div class = "receipt-section">
             <h3>Receipt Summary</h3>
             <p>Total cost: <span id = "total-price"></span></p>
+            <button id="reset-button" class="reset-button">Clear All</button>
         </div>
+
     </main>
     <script src="planner.js"></script>
 </body>

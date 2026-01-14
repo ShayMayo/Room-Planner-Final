@@ -33,10 +33,9 @@ function LoadFromLocalStorage(){
                 }
             }
         });
+        UpdateTotalPrice();
     }
 }
-
-
 
 LoadFromLocalStorage();
 
@@ -84,7 +83,7 @@ for(let i=0; i<numberOfColorChangers; i++){
     })
 }
 
-document.getElementById("resetBtn").addEventListener("click", function(){
+document.getElementById("reset-button").addEventListener("click", function(){
     resetGrid()
 })
 
@@ -95,6 +94,7 @@ cards.forEach(card => {
         event.dataTransfer.setData('icon', this.dataset.icon);
         event.dataTransfer.setData('size', this.dataset.size);
         event.dataTransfer.setData('price', this.dataset.price);
+        event.dataTransfer.setData('name', this.dataset.name);
         draggedFurniture.classList.add("dragged");
     });
     card.addEventListener("dragend",function(){
@@ -111,9 +111,10 @@ blocks.forEach(block => {
 
     block.addEventListener("drop", function(event){
         event.preventDefault();
-        const icon = draggedFurniture.dataset.icon;
-        const size = draggedFurniture.dataset.size;
-        const price = draggedFurniture.dataset.price;
+        const icon = draggedFurniture.getAttribute('data-icon');
+        const size = draggedFurniture.getAttribute('data-size');
+        const price = draggedFurniture.getAttribute('data-price');
+        const name = draggedFurniture.getAttribute('data-name');
         const index = parseInt(this.dataset.index);
         const nextBlock = this.nextElementSibling;
         
@@ -126,6 +127,7 @@ blocks.forEach(block => {
                 icon: icon,
                 size: size,
                 price: price,
+                name: name,
                 rotation: 0
             }
         }
