@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* =========================
-     1) NAV HOVER (same as Home)
-  ========================= */
+  
   const navLinks = document.querySelectorAll(".navLinks a");
 
   for (let i = 0; i < navLinks.length; i++) {
@@ -17,10 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* =========================
-     2) CARD HOVER – VALUES CARDS
-     (.value-card)
-  ========================= */
+
   const valueCards = document.querySelectorAll(".value-card");
 
   for (let i = 0; i < valueCards.length; i++) {
@@ -36,10 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* =========================
-     3) CARD HOVER – FEATURES
-     (.feature-card)
-  ========================= */
+
   const featureCards = document.querySelectorAll(".feature-card");
 
   for (let i = 0; i < featureCards.length; i++) {

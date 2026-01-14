@@ -1,8 +1,5 @@
 /* about.css */
-/* 1) Inherit the exact look & feel of the Home page */
-@import url("./index.css");
 
-/* 2) Page background like your screenshots */
 body{
   background-color: #f7f3ee;
 }
@@ -12,9 +9,7 @@ body{
   background-color: #eaf4ee;
 }
 
-/* =========================
-   About Hero (Top section)
-========================= */
+/*About Hero (Top section) */
 .hero{
   padding: 90px 20px 50px;
   text-align: center;
@@ -95,9 +90,9 @@ body{
   margin: 0;
 }
 
-/* =========================
+/*
    Sections common
-========================= */
+ */
 .section{
   padding: 80px 20px;
   background-color: #f7f3ee;
@@ -135,9 +130,9 @@ body{
   color: #1f2937;
 }
 
-/* =========================
+/* 
    Mission layout (2 columns)
-========================= */
+ */
 .section-grid{
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -226,9 +221,9 @@ body{
   color: #1f2937;
 }
 
-/* =========================
+/* 
    Values grid (6 cards)
-========================= */
+ */
 .cards-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -269,9 +264,9 @@ body{
   margin: 0;
 }
 
-/* =========================
+/* 
    Table styles
-========================= */
+ */
 .table-wrap{
   margin-top: 34px;
   background-color: #fdfbf7;
@@ -316,9 +311,9 @@ body{
   font-weight: 800;
 }
 
-/* =========================
+/* 
    Features (3 columns)
-========================= */
+ */
 .features-grid{
   margin-top: 40px;
   display: grid;
