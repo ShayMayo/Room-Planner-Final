@@ -1,0 +1,534 @@
+/* NAVBAR DESIGN */
+.mainNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    /* makes sure the navBar stays at the top at all times */
+    top: 0;
+    z-index: 1000;
+}
+
+.navLinks {
+    display: flex;      
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks a {
+    text-decoration: none;
+    /* no underline */
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.darkModeBtn {
+    background: none;     
+    border: none;          
+    font-family: 'Assistant', sans-serif; 
+    font-size: 1rem;     
+    font-weight: 500;
+    color: #333;           
+    transition: color 0.3s; 
+}
+
+.hamburgerBtn {
+    display: none; 
+    /* no hamburBtn in screens differet than mobile */
+}
+
+/* only in mobile need to see the the hamburBtn */
+@media (max-width: 768px) {
+    
+    .hamburgerBtn {
+        display: block;
+        /* displays the btn */
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+    /* dont want any links on mobile */
+    .navLinks {
+        display: none; 
+        /*later the menue will be opened  */
+       flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        z-index: 100;
+    }
+}
+
+body {
+    font-family: "Assistant", sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* SEARCH BAR DESIGN */
+.searchContainer {
+    background-color: #f3f4f6;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    /* for the responsivity, so that in a laptop it wont be too big */
+    margin: 0 auto 50px auto; 
+    /*puts in the middle */
+}
+
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    margin-right: 10px;
+}
+
+.searchInput {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex-grow: 1;
+    /* so that the input is the only one that will gorw as the screen changes */
+    font-size: 1rem;
+}
+
+.searchBtn {
+    background-color: #f0a16b; 
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    /* turns the pointer to the little hand when the mouse hovers */
+    font-weight: bold;
+}
+
+/* ACTUAL CATALOG */
+.productsCatalog {
+    display: grid;
+    gap: 30px; 
+    /* between the cards themselves */
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* default-mobile first, only one colum */
+    grid-template-columns: 1fr;
+}
+ /* tablet */
+@media (min-width: 481px) {
+    .productsCatalog{
+       grid-template-columns: 1fr 1fr;
+       /* makes sure there are only 2 colums */
+     }
+}
+/* laptop */
+@media (min-width: 1201px) {
+    .productsCatalog{
+        grid-template-columns: 1fr 1fr 1fr;
+        /* makes sure there are only 3 colums */
+    }
+}
+@media (min-width: 1601px){
+    .productsCatalog{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* makes sure there are 4 colums */
+    }
+}
+
+
+.productCard {
+    background-color: #f8f8f8;
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column; 
+    /* contect: top to bottom */
+}
+
+/* the photo inside the card area */
+.cardContainer {
+    background-color: #eaeaea; 
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative; 
+    /* allows the room type float in the left corner */
+    overflow: hidden;
+    /* makes the photo inside the card look perfect, without sharp edges */
+}
+
+.cardContainer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* making sure the photo stays in the middle */
+}
+
+/* the small label - living room etc */
+.prodCategory {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.prodTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.productCard p {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    /* pushes the foother to little bit lower if there is some extra text */
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.prodPrice {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f0a16b;
+}
+
+.detailsLink {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.18rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* FOOTER*/
+.footer {
+    background-color: #eff2f1;
+    padding-top: 70px;
+    margin-top: 100px;
+    color: #555;
+}
+
+.footerContainer {
+    max-width: 1200px;
+    /* for the responsivity */
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    /* the side spaces */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+    /* default-mobile, only one colum */
+}
+
+/* there isnt much content in the footer so I can make sure that only in the mobile there are different colums */
+/* anything but mobile - 4 colums in the footer */
+@media (min-width: 768px) {
+    .footerContainer {
+        grid-template-columns: repeat(4, 1fr);
+        /*the same as we did in the chess board */
+    }
+}
+
+/* the footer title, call an attribute not a class */
+footer h3 {
+    color: #f0a16b;
+    font-size: 1.2rem; 
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footerBrandDescription {
+    font-size: 0.9rem; 
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 250px;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* !!!!!!!!!!!!might need to cahnge thje logo photo size, need to think about that!!!!!!!!!!11 */
+.footerLogo img{
+      width: 80px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.logoText {
+    font-weight: bold;
+    font-size: 1.25rem; 
+    color: #f0a16b;
+}
+
+.socialMediaIcons {
+    display: flex;
+    gap: 15px;
+
+}
+.socialMediaIcons a {
+     text-decoration: none; 
+    /* takes off the underline from the link */
+}
+
+.socialMediaIcons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+.socialMediaIcons a:first-child img {
+    /* fixing the instagram problem */
+    transform: scale(1.4); 
+}
+
+.footerLinks {
+    list-style: none; 
+    /* takes off the actual bullet visual from the list */
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinks li {
+    margin-bottom: 12px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem; 
+}
+
+.footerContactOptions {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContactOptions li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.contactUsIcons {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+.footerBottom {
+    margin-top: 60px;
+    border-top: 1px solid #dce5e0;
+    padding: 30px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    /* default-phone-one underneath another */
+    align-items: center;
+    gap: 15px;
+    
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem; 
+    color: #888;
+}
+
+.footerLegalyLinks a {
+    text-decoration: none;
+    /* no underline in the links */
+    color: #888;
+    margin-left: 20px;
+}
+
+/* only in phone size it doesnt have place, in all the other screens its ok */
+@media (min-width: 768px) {
+    .footerBottom {
+        flex-direction: row; 
+        /* one row */
+        justify-content: space-between; 
+    }
+}
+
+/* fixing mobile sizing problems */
+@media (max-width: 480px) {
+    /* making smaller padding to have more room for everything */
+    body {
+        padding: 10px;
+    }
+    /* dowsizing the h1 */
+    h1 {
+        font-size: 2rem; 
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .productCard {
+        width: auto;
+        /* undo the fized size */
+        margin: 0; 
+        /* no unnesecery spaces in the sides */
+    }
+    .searchContainer {
+        width: auto;
+        /* undo the 100%, allow it to handle on its own */
+        margin-left: 10px; 
+        /* smaller gap in the sides */
+        margin-right: 10px;
+    }
+
+    /* !!!!!!!!!!!!!!maybe not to this part, it makes it seem weird !!!!!!!!!!!!!!!! */
+    .searchBtn {
+        /* shrinking the button */
+        padding: 0.5rem 0.8rem; 
+        font-size: 0.8rem;      
+        flex-shrink: 0; 
+        /* not allowing the button to shrink */
+    }
+    .searchInput {
+        min-width: 0; 
+        /* allowing the text area doensize when there isnt much room */
+    }
+}
+/* mouseover the card, js will make it happen */
+.activeCard {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.activeCard .prodTitle {
+    color: #e67e22;
+}
+
+/* DARK MODE */
+body.darkMode {
+    background-color: #121212; 
+    color: #e0e0e0;            
+}
+
+
+body.darkMode .mainNavbar {
+    background-color: #1f1f1f; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+}
+
+body.darkMode .navLinks a,
+body.darkMode .darkModeBtn,
+body.darkMode .navLogo .logoText {
+    color: #ffffff; 
+}
+
+body.darkMode main,
+body.darkMode header,
+body.darkMode section {
+    background-color: #121212; 
+    color: #e0e0e0;            
+}
+
+body.darkMode h1,
+body.darkMode h2,
+body.darkMode h3 {
+    color: #ffb74d;
+    background-color: transparent;
+}
+
+body.darkMode .productCard {
+    background-color: #1e1e1e;
+    border: 1px solid #333;   
+    box-shadow: none;         
+}
+
+body.darkMode .prodTitle {
+    color: #ffffff;
+}
+
+body.darkMode .detailsLink {
+    color: #ffb74d; 
+    transition: color 0.3s ease; 
+}
+
+/* POP THE CARD IN THE DARK MODE */
+body.darkMode .activeCard {
+    background-color: #252525; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6); 
+    border-color: #ffb74d; 
+}
+
+body.darkMode .activeCard .prodTitle {
+    color: #ffb74d; 
+}
+
+.navLinks a.text-highlight,
+.darkModeBtn.text-highlight {
+    color: #e67e22;
+    font-weight: 700;
+}
+
+body.darkMode .navLinks a.text-highlight,
+body.darkMode .darkModeBtn.text-highlight {
+    color: #ffb74d; 
+}
+
+#hamburgerBtn, .darkModeBtn {
+    cursor: pointer;
+}
