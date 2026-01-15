@@ -1,12 +1,14 @@
 // HAMBURGER MENU
 const hamburgerBtn = document.querySelector("#hamburgerBtn");
 const navMenu = document.querySelector(".navLinks");
+// turn the mouse icon into curser icon
+hamburgerBtn.style.cursor = "pointer";
 
 hamburgerBtn.addEventListener("click", function() {
-    if (navMenu.style.display === "flex") {
-        navMenu.style.display = "none";
+    if (navMenu.classList.contains("nav-active")) {
+        navMenu.classList.remove("nav-active");
     } else {
-        navMenu.style.display = "flex";
+        navMenu.classList.add("nav-active");
     }
 });
 
@@ -56,26 +58,6 @@ for (let i = 0; i < navLinks.length; i++) {
         this.classList.remove("text-highlight");
     });
 }
-
-// DARK MODE BUTTON
-const themeBtn = document.querySelector(".darkModeBtn");
-
-themeBtn.addEventListener("mouseover", function() {
-    this.classList.add("text-highlight");
-});
-
-themeBtn.addEventListener("mouseout", function() {
-    this.classList.remove("text-highlight");
-});
-
-themeBtn.addEventListener("click", function() {
-    document.body.classList.toggle("darkMode");
-    if (document.body.classList.contains("darkMode")) {
-        themeBtn.innerText = "Light Mode";
-    } else {
-        themeBtn.innerText = "Dark Mode";
-    }
-});
 
 // LOG THR CHANGES
 console.log("JS Loaded Successfully & Clean from Styles!");
