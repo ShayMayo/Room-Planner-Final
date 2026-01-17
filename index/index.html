@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +17,10 @@
   
 
  <header class="mainNavbar">
+
   <div class="navLogo">
     <a href="index.html" class="logo" aria-label="RoomCraft Home">
-      <img src="/images/LOGO ROOMCRAFIT HOME.png " alt="RoomCraft" class="logo-image">
-
+      <img src="/images/LOGO ROOMCRAFIT HOME.png" alt="RoomCraft" class="logo-image">
       <span class="logo-text">
         <span class="logo-name">RoomCraft</span>
         <span class="logo-tagline">Interior Planner</span>
@@ -24,16 +28,25 @@
     </a>
   </div>
 
+  <button class="hamburgerBtn" id="hamburgerBtn" aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
   <nav aria-label="Main navigation">
     <ul class="navLinks">
       <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="catalog.html">Catalog</a></li>
       <li><a href="planner.html">Room Planner</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contactUs.html">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+
 </header>
+
+
 
   <main id="main">
     <section class="cta-section" aria-label="Room planner call to action">
@@ -66,52 +79,53 @@
 
         <div class="tools-grid">
   <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">📐</div>
-    <h3 class="tool-title">2D Room Planning</h3>
-    <p class="tool-text">
-      Build layouts using a simple grid and preview your room before decisions.
-    </p>
-  </article>
+  <div class="tool-icon" aria-hidden="true">📐</div>
+  <h3 class="tool-title">2D Room Planning</h3>
+  <p class="tool-text">
+    Build layouts using a simple grid and preview your room before decisions.
+  </p>
+</article>
 
-  <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">🫳</div>
-    <h3 class="tool-title">Drag &amp; Drop</h3>
-    <p class="tool-text">
-      Add items to the room and move them around easily.
-    </p>
-  </article>
+<article class="tool-card">
+  <div class="tool-icon" aria-hidden="true">🖱️</div>
+  <h3 class="tool-title">Drag &amp; Drop</h3>
+  <p class="tool-text">
+    Add items to the room and move them around easily.
+  </p>
+</article>
 
-  <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">🧱</div>
-    <h3 class="tool-title">Collision Detection</h3>
-    <p class="tool-text">
-      Get an alert when furniture overlaps so layouts stay realistic.
-    </p>
-  </article>
+<article class="tool-card">
+  <div class="tool-icon" aria-hidden="true">⚠️</div>
+  <h3 class="tool-title">Collision Detection</h3>
+  <p class="tool-text">
+    Get an alert when furniture overlaps so layouts stay realistic.
+  </p>
+</article>
 
-  <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">🟢</div>
-    <h3 class="tool-title">Wall Color</h3>
-    <p class="tool-text">
-      Switch wall colors quickly to match your style.
-    </p>
-  </article>
+<article class="tool-card">
+  <div class="tool-icon" aria-hidden="true">🎨</div>
+  <h3 class="tool-title">Wall Color</h3>
+  <p class="tool-text">
+    Switch wall colors quickly to match your style.
+  </p>
+</article>
 
-  <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">📦</div>
-    <h3 class="tool-title">Furniture Catalog</h3>
-    <p class="tool-text">
-      Browse categories and add items with one click.
-    </p>
-  </article>
+<article class="tool-card">
+  <div class="tool-icon" aria-hidden="true">🪑</div>
+  <h3 class="tool-title">Furniture Catalog</h3>
+  <p class="tool-text">
+    Browse categories and add items with one click.
+  </p>
+</article>
 
-  <article class="tool-card">
-    <div class="tool-icon" aria-hidden="true">📲</div>
-    <h3 class="tool-title">Responsive Experience</h3>
-    <p class="tool-text">
-      Works on desktop, tablet, and mobile screens.
-    </p>
-  </article>
+<article class="tool-card">
+  <div class="tool-icon" aria-hidden="true">📱</div>
+  <h3 class="tool-title">Responsive Experience</h3>
+  <p class="tool-text">
+    Works on desktop, tablet, and mobile screens.
+  </p>
+</article>
+
 </div>
       </div>
     </section>

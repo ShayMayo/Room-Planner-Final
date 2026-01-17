@@ -5,23 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | RoomCraft</title>
 
-  <link rel="stylesheet" href="./index.css" />
   <link rel="stylesheet" href="./about.css" />
 </head>
 
 <body id="top">
 
   <header class="mainNavbar">
+
   <div class="navLogo">
     <a href="index.html" class="logo" aria-label="RoomCraft Home">
-     <img src="./LOGO ROOMCRAFIT HOME.png" alt="RoomCraft" class="logo-image" />
-
+      <img src="/images/LOGO ROOMCRAFIT HOME.png" alt="RoomCraft" class="logo-image">
       <span class="logo-text">
         <span class="logo-name">RoomCraft</span>
         <span class="logo-tagline">Interior Planner</span>
       </span>
     </a>
   </div>
+
+  <button class="hamburgerBtn" id="hamburgerBtn" aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
   <nav aria-label="Main navigation">
     <ul class="navLinks">
@@ -32,29 +37,28 @@
       <li><a href="contactUs.html">Contact</a></li>
     </ul>
   </nav>
+  </header>
 
-  <div class="header-actions">
-    <a href="planner.html" class="button">Start Designing</a>
-  </div>
-</header>
 
 <main class="site-main" id="mainContent">
 
 
     <section class="hero hero-about" aria-labelledby="aboutTitle">
-      <div class="container hero-inner">
-        <h1 id="aboutTitle" class="hero-title">About RoomCraft</h1>
-        <p class="hero-subtitle">
-          We believe everyone deserves a beautifully designed space.
-          Our mission is to make interior planning accessible, intuitive, and enjoyable for everyone.
-        </p>
+  <div class="container hero-inner">
+    <h1 id="aboutTitle" class="hero-title">About RoomCraft</h1>
 
-        <div class="hero-links">
-          <a class="btn btn-primary" href="#mission">Our Mission</a>
-          <a class="btn btn-secondary" href="#values">Our Values</a>
-        </div>
-      </div>
-    </section>
+    <p class="hero-subtitle">
+      We believe everyone deserves a beautifully designed space.
+      Our mission is to make interior planning accessible, intuitive, and enjoyable for everyone.
+    </p>
+
+    <div class="about-tabs">
+      <button class="about-tab is-active" type="button">Our Mission</button>
+      <button class="about-tab" type="button">Our Values</button>
+    </div>
+  </div>
+</section>
+
 
     <hr class="section-divider" />
 
@@ -260,6 +264,7 @@
       <small>© 2026 RoomCraft. All rights reserved.</small>
     </div>
   </footer>
+<script src="./about.js"></script>
 
 </body>
 </html>

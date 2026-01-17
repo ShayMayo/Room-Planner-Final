@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // =========================
-  //  NAV HOVER (Home)
-  // כשעוברים עם העכבר על לינקים בתפריט: צבע + bold
-  // =========================
+  // NAV HOVER
   const navLinks = document.querySelectorAll(".navLinks a");
 
   for (let i = 0; i < navLinks.length; i++) {
@@ -13,16 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     navLinks[i].addEventListener("mouseout", function () {
-      navLinks[i].style.color = "";       // חוזר ל-CSS המקורי
-      navLinks[i].style.fontWeight = "";  // חוזר ל-CSS המקורי
+      navLinks[i].style.color = "";
+      navLinks[i].style.fontWeight = "";
     });
   }
 
-  // =========================
-  //  CARD HOVER SHADOW (Home)
-  // "ריבועים" במסך בית: .tool-card
-  // הצללה + הרמה קלה כשעומדים על ריבוע
-  // =========================
+  // CARD HOVER
   const homeCards = document.querySelectorAll(".tool-card");
 
   for (let i = 0; i < homeCards.length; i++) {
@@ -39,16 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // =========================
-  //  FOOTER LINKS HOVER (Home)
-  // בפוטר: underline או שינוי צבע כדי "להראות שזה אינטראקטיבי"
-  // =========================
+  // FOOTER LINKS HOVER
   const footerLinks = document.querySelectorAll(".site-footer a");
 
   for (let i = 0; i < footerLinks.length; i++) {
     footerLinks[i].addEventListener("mouseover", function () {
       this.style.textDecoration = "underline";
-      this.style.color = "#2f5d4a"; // 
+      this.style.color = "#2f5d4a";
     });
 
     footerLinks[i].addEventListener("mouseout", function () {
@@ -56,22 +46,33 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.color = "";
     });
   }
-// =========================
-// 4) HOVER EFFECT FOR CTA BUTTONS (green section)
-// =========================
-const ctaButtons = document.querySelectorAll(".home-preview-section .button");
 
-for (let i = 0; i < ctaButtons.length; i++) {
-  ctaButtons[i].addEventListener("mouseover", function () {
-    this.style.backgroundColor = "#e89358"; // כתום כהה יותר
-    this.style.transform = "translateY(-2px)";
-    this.style.transition = "background-color 0.2s, transform 0.2s";
-  });
 
-  ctaButtons[i].addEventListener("mouseout", function () {
-    this.style.backgroundColor = "";
-    this.style.transform = "";
-    this.style.transition = "";
+  const ctaButtons = document.querySelectorAll(".home-preview-section .button");
+
+  for (let i = 0; i < ctaButtons.length; i++) {
+    ctaButtons[i].addEventListener("mouseover", function () {
+      this.style.backgroundColor = "#e89358";
+      this.style.transform = "translateY(-2px)";
+      this.style.transition = "background-color 0.2s, transform 0.2s";
+    });
+
+    ctaButtons[i].addEventListener("mouseout", function () {
+      this.style.backgroundColor = "";
+      this.style.transform = "";
+      this.style.transition = "";
+    });
+  }
+
+
+  // HAMBURGER TOGGLE
+
+  const hamburgerBtn = document.querySelector("#hamburgerBtn");
+const navMenu = document.querySelector(".navLinks");
+
+if (hamburgerBtn && navMenu) {
+  hamburgerBtn.addEventListener("click", function () {
+    navMenu.classList.toggle("nav-active");
   });
 }
 

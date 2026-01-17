@@ -1,4 +1,3 @@
-
 *{
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ body{
   color: #1f2937;
 }
 
-/* Containers used across the site */
 .cta-container,
 .tools-container,
 .preview-container,
@@ -33,7 +31,7 @@ body{
   cursor: pointer;
 }
 
-/*NAVBAR */
+/* NAVBAR */
 .mainNavbar{
   position: sticky;
   top: 0;
@@ -94,6 +92,8 @@ body{
 
 .navLinks a:hover{
   background-color: #d9ece2;
+  color: #e67e22;
+  font-weight: 700;
 }
 
 /* Active page */
@@ -102,7 +102,7 @@ body{
   color: #ffffff;
 }
 
-
+/* Header button */
 .header-actions .button{
   background-color: #f0a16b;
   color: #1f2937;
@@ -117,13 +117,24 @@ body{
   background-color: #e89358;
 }
 
-/*  HERO / CTA */
+/* Hamburger button */
+.navToggle{
+  display: none;
+  border: 1px solid #e7e1d8;
+  background: #ffffff;
+  color: #2f5d4a;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* HERO */
 .cta-section{
   position: relative;
   padding: 90px 20px;
   text-align: center;
-  color: #e6880c;
-
+  color: #000000;
   background-image: url("/images/ROOM.jpg");
   background-size: cover;
   background-position: center;
@@ -152,7 +163,7 @@ body{
   background-color: #e89358;
 }
 
-/*  TOOLS SECTION */
+/* TOOLS SECTION */
 .tools-section{
   background-color: #f7f3ee;
   padding: 70px 20px;
@@ -186,43 +197,43 @@ body{
 .tool-card{
   background-color: #ffffff;
   border: 1px solid #e7e1d8;
-  border-radius: 14px;
-  padding: 18px;
+  border-radius: 22px;
+  padding: 34px 28px;
+  box-shadow: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tool-card:hover{
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
 }
 
 .tool-icon{
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
   background-color: #eaf4ee;
-  color: #2f5d4a;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-}
-
-.tool-icon svg{
-  width: 22px;
-  height: 22px;
-  display: block;
+  margin-bottom: 18px;
+  font-size: 26px;
+  line-height: 1;
 }
 
 .tool-title{
-  font-size: 18px;
+  font-size: 28px;
+  margin-bottom: 14px;
   color: #1f2937;
-  margin-bottom: 8px;
 }
 
 .tool-text{
+  font-size: 16px;
+  line-height: 1.8;
   color: #6b7280;
-  font-size: 14px;
 }
 
-/* =========================
-   HOME PREVIEW SECTION (GREEN)
-   This replaces the duplicate blocks you had
-========================= */
+/* HOME PREVIEW SECTION */
 .home-preview-section{
   background-color: #2f5d4a;
   padding: 80px 20px;
@@ -286,13 +297,15 @@ body{
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .home-preview-section .button:hover{
   background-color: #e89358;
+  transform: translateY(-2px);
 }
 
-/* If you also show an image in preview */
+/* Preview image */
 .preview-media img{
   width: 100%;
   height: auto;
@@ -301,7 +314,7 @@ body{
   border: 1px solid #e7e1d8;
 }
 
-/*FOOTER*/
+/* FOOTER */
 .site-footer{
   background-color: #eaf4ee;
   border-top: 1px solid #cfe3d8;
@@ -316,7 +329,6 @@ body{
   gap: 18px;
 }
 
-/* Footer brand row */
 .footer-brand-row{
   display: flex;
   align-items: center;
@@ -331,7 +343,6 @@ body{
   color: #000000;
 }
 
-/* Footer titles */
 .footer-title{
   font-size: 18px;
   font-weight: 700;
@@ -350,7 +361,6 @@ body{
   margin-bottom: 10px;
 }
 
-/* Footer links */
 .site-footer a{
   color: #000000;
   text-decoration: none;
@@ -358,15 +368,14 @@ body{
 
 .site-footer a:hover{
   text-decoration: underline;
+  color: #2f5d4a;
 }
 
-/* Contact */
 .site-footer address{
   font-style: normal;
   color: #000000;
 }
 
-/* Social icons */
 .socialMediaIcons{
   display: flex;
   gap: 10px;
@@ -379,7 +388,6 @@ body{
   display: block;
 }
 
-/* Footer bottom */
 .footer-bottom{
   max-width: 1200px;
   margin: 28px auto 0;
@@ -390,45 +398,14 @@ body{
   font-size: 13px;
 }
 
-/*RESPONSIVE */
-@media (max-width: 480px){
-  .mainNavbar{
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .navLinks{
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .cta-title{
-    font-size: 28px;
-  }
-
-  .tools-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .home-preview-section .preview-container{
-    flex-direction: column;
-  }
-
-  .footer-container{
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 900px){
+/* RESPONSIVE */
+@media (max-width: 1024px){
   .navLinks{
     gap: 16px;
   }
+}
 
-  .cta-title{
-    font-size: 34px;
-  }
-
+@media (max-width: 900px){
   .tools-grid{
     grid-template-columns: repeat(2, 1fr);
   }
@@ -441,19 +418,115 @@ body{
     grid-template-columns: 1fr 1fr;
   }
 }
-/* hamburger open/close class */
-.navLinks{
-  display: flex;
-}
-.navLinks.is-open{
-  display: flex;
-}
-@media (max-width: 480px){
+
+@media (max-width: 768px){
+  .mainNavbar{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navToggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .navLinks{
     display: none;
     flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding-top: 10px;
   }
+
   .navLinks.is-open{
     display: flex;
+  }
+
+  .navLinks a{
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-actions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px){
+  .cta-title{
+    font-size: 28px;
+  }
+
+  .tools-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+.hamburgerBtn{
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* bars */
+.hamburgerBtn .bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #355f4b;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px){
+  .mainNavbar{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hamburgerBtn{
+    display: block;
+  }
+
+
+  .navLinks{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    background-color: #eaf4ee;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 100;
+    gap: 10px;
+  }
+
+
+  .navLinks.nav-active{
+    display: flex;
+  }
+
+  .navLinks a{
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-actions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
