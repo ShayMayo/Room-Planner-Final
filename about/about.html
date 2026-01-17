@@ -37,7 +37,9 @@
       <li><a href="contactUs.html">Contact</a></li>
     </ul>
   </nav>
-  </header>
+  
+</header>
+
 
 
 <main class="site-main" id="mainContent">
@@ -53,49 +55,52 @@
     </p>
 
     <div class="about-tabs">
-      <button class="about-tab is-active" type="button">Our Mission</button>
-      <button class="about-tab" type="button">Our Values</button>
+  <button class="about-tab is-active" data-target="mission">Our Mission</button>
+  <button class="about-tab" data-target="values">Our Values</button>
     </div>
+
   </div>
 </section>
 
 
     <hr class="section-divider" />
 
-    <section class="section mission" id="mission" aria-labelledby="missionTitle">
-      <div class="container section-grid">
+    <section class="section mission" id="mission">
 
-        <article class="content-block">
-          <p class="pill pill-green">
-            <span class="pill-text">Our Mission</span>
-          </p>
+     <h2 id="missionTitle" class="section-title center">Our Mission</h2>
+     <p class="section-subtitle center">
+       What drives RoomCraft forward
+      </p>
+ 
+  <div class="container section-grid">
+    <article class="content-block">
 
-          <h2 id="missionTitle" class="section-title">
-            Empowering Everyone to<br />
-            Design Their Dream Spaces
-          </h2>
+      <h3 class="section-title">
+        Empowering Everyone to<br />
+        Design Their Dream Spaces
+      </h3>
 
-          <p class="section-text">
-            RoomCraft was born from a simple idea: that planning your interior spaces shouldn't require
-            expensive software or professional expertise.
-            We've created an intuitive 2D room planner that puts the power of interior design in your hands.
-          </p>
+      <p class="section-text">
+        RoomCraft was born from a simple idea: that planning your interior spaces shouldn't require
+        expensive software or professional expertise.
+      </p>
 
-          <p class="section-text">
-            Whether you're moving into a new home, redecorating a room, or just exploring possibilities,
-            our tools help you visualize and plan with confidence.
-            Experiment with layouts, furniture placement, and colors, all without moving a single piece of furniture.
-          </p>
+      <p class="section-text">
+        Whether you're moving into a new home, redecorating a room, or just exploring possibilities,
+        our tools help you visualize and plan with confidence.
+      </p>
 
-          <a class="btn btn-primary" href="planner.html">
-            Try the Planner <span class="btn-icon" aria-hidden="true">→</span>
-          </a>
-        </article>
+      <a class="btn btn-primary" href="planner.html">
+        Try the Planner <span class="btn-icon" aria-hidden="true">→</span>
+      </a>
 
-      </div>
-    </section>
+    </article>
+  </div>
 
-    <section class="section values" id="values" aria-labelledby="valuesTitle">
+</section>
+
+
+    <section class="section values" id="values">
       <div class="container">
         <h2 id="valuesTitle" class="section-title center">Our Values</h2>
         <p class="section-subtitle center">
@@ -215,16 +220,11 @@
         </p>
 
         <div class="socialMediaIcons">
-          <a href="https://www.instagram.com" aria-label="Instagram">
-            <img src="./instegarmIcon.png" alt="Instagram">
-          </a>
-          <a href="https://www.twitter.com" aria-label="Twitter">
-            <img src="./twitter.png" alt="Twitter">
-          </a>
-          <a href="https://www.facebook.com" aria-label="Facebook">
-            <img src="./facebook.png" alt="Facebook">
-          </a>
-        </div>
+                    <a href="www.instagram.com"><img src="./images/instegarmIcon.png" alt="room designer instegram"></a>
+                    <a href="www.twitter.com"><img src="./images/twitter.png" alt="room designer twitter"></a>
+                    <a href="www.facebook.com"><img src="./images/facebook.png" alt="room designer facebook"></a>
+
+                </div>
       </section>
 
       <div class="footerCategories">

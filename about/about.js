@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  
+  // NAV HOVER
   const navLinks = document.querySelectorAll(".navLinks a");
 
   for (let i = 0; i < navLinks.length; i++) {
@@ -15,60 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // CARD HOVER (About: values + features)
+  const aboutCards = document.querySelectorAll(".value-card, .feature-card");
 
-  const valueCards = document.querySelectorAll(".value-card");
-
-  for (let i = 0; i < valueCards.length; i++) {
-    valueCards[i].addEventListener("mouseover", function () {
+  for (let i = 0; i < aboutCards.length; i++) {
+    aboutCards[i].addEventListener("mouseover", function () {
       this.style.boxShadow = "0 10px 25px rgba(0,0,0,0.12)";
       this.style.transform = "translateY(-4px)";
-      this.style.transition = "box-shadow 0.2s, transform 0.2s";
+      this.style.transition = "transform 0.2s, box-shadow 0.2s";
     });
 
-    valueCards[i].addEventListener("mouseout", function () {
+    aboutCards[i].addEventListener("mouseout", function () {
       this.style.boxShadow = "";
       this.style.transform = "";
+      this.style.transition = "";
     });
   }
 
-
-  const featureCards = document.querySelectorAll(".feature-card");
-
-  for (let i = 0; i < featureCards.length; i++) {
-    featureCards[i].addEventListener("mouseover", function () {
-      this.style.boxShadow = "0 10px 25px rgba(0,0,0,0.12)";
-      this.style.transform = "translateY(-4px)";
-      this.style.transition = "box-shadow 0.2s, transform 0.2s";
-    });
-
-    featureCards[i].addEventListener("mouseout", function () {
-      this.style.boxShadow = "";
-      this.style.transform = "";
-    });
-  }
-
-  /* =========================
-     4) BUTTON HOVER (About page)
-     (.btn)
-  ========================= */
-  const buttons = document.querySelectorAll(".btn");
-
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("mouseover", function () {
-      this.style.opacity = "0.9";
-      this.style.transform = "translateY(-2px)";
-      this.style.transition = "opacity 0.2s, transform 0.2s";
-    });
-
-    buttons[i].addEventListener("mouseout", function () {
-      this.style.opacity = "";
-      this.style.transform = "";
-    });
-  }
-
-  /* =========================
-     5) FOOTER LINKS HOVER
-  ========================= */
+  // FOOTER LINKS HOVER
   const footerLinks = document.querySelectorAll(".site-footer a");
 
   for (let i = 0; i < footerLinks.length; i++) {
@@ -83,4 +47,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // BUTTON HOVER (About: Try the Planner)
+  const aboutButtons = document.querySelectorAll(".btn-primary, .header-actions .button");
+
+  for (let i = 0; i < aboutButtons.length; i++) {
+    aboutButtons[i].addEventListener("mouseover", function () {
+      this.style.backgroundColor = "#e89358";
+      this.style.transform = "translateY(-2px)";
+      this.style.transition = "background-color 0.2s, transform 0.2s";
+    });
+
+    aboutButtons[i].addEventListener("mouseout", function () {
+      this.style.backgroundColor = "";
+      this.style.transform = "";
+      this.style.transition = "";
+    });
+  }
+
+  // HAMBURGER TOGGLE
+  const hamburgerBtn = document.querySelector("#hamburgerBtn");
+  const navMenu = document.querySelector(".navLinks");
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("nav-active");
+    });
+  }
+
 });
+// ABOUT TABS SCROLL
+const aboutTabs = document.querySelectorAll(".about-tab");
+
+for (let i = 0; i < aboutTabs.length; i++) {
+  aboutTabs[i].addEventListener("mouseover", function () {
+    this.style.boxShadow = "0 6px 14px rgba(0,0,0,0.15)";
+    this.style.transform = "translateY(-2px)";
+    this.style.transition = "box-shadow 0.2s, transform 0.2s";
+  });
+
+  aboutTabs[i].addEventListener("mouseout", function () {
+    this.style.boxShadow = "";
+    this.style.transform = "";
+    this.style.transition = "";
+  });
+}
+
