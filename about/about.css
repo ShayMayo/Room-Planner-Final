@@ -1,12 +1,9 @@
 /* about.css */
+/* NOTE: header + footer styles come from index.css (do not override them here) */
 
+/* About page general background (content only) */
 body{
   background-color: #f7f3ee;
-}
-
-/* Make sure the sticky navbar stays identical */
-.mainNavbar{
-  background-color: #eaf4ee;
 }
 
 /*About Hero (Top section) */
@@ -90,9 +87,7 @@ body{
   margin: 0;
 }
 
-/*
-   Sections common
- */
+/* Sections common */
 .section{
   padding: 80px 20px;
   background-color: #f7f3ee;
@@ -130,9 +125,7 @@ body{
   color: #1f2937;
 }
 
-/* 
-   Mission layout (2 columns)
- */
+/* Mission layout (2 columns) */
 .section-grid{
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -155,75 +148,7 @@ body{
   color: #2f5d4a;
 }
 
-.side-card{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card{
-  width: min(520px, 100%);
-  min-height: 420px;
-  background-color: #fdfbf7;
-  border: 1px solid #e7e1d8;
-  border-radius: 26px;
-  padding: 34px 26px;
-  position: relative;
-}
-
-.card::before{
-  content: "";
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  width: 70px;
-  height: 70px;
-  border-radius: 18px;
-  background-color: #f3d9cf;
-  opacity: 0.7;
-}
-
-.card-icon{
-  width: 120px;
-  height: auto;
-  margin: 70px auto 14px;
-}
-
-.card-title{
-  font-family: "Georgia", "Times New Roman", serif;
-  font-size: 22px;
-  margin: 0;
-  text-align: center;
-  color: #1f2937;
-}
-
-.card-text{
-  text-align: center;
-  color: #6b7280;
-  margin-top: 6px;
-}
-
-.card-meta{
-  margin-top: 22px;
-  display: grid;
-  gap: 8px;
-}
-
-.meta-line{
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  color: #6b7280;
-  margin: 0;
-}
-
-.meta-label{
-  font-weight: 700;
-  color: #1f2937;
-}
-
-/* 
-   Values grid (6 cards)
- */
+/* Values grid (6 cards) */
 .cards-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -249,6 +174,10 @@ body{
   justify-content: center;
   font-weight: 800;
   margin-bottom: 16px;
+
+  /* emoji/text sizing fix */
+  font-size: 28px;
+  line-height: 1;
 }
 
 .value-title{
@@ -264,56 +193,7 @@ body{
   margin: 0;
 }
 
-/* 
-   Table styles
- */
-.table-wrap{
-  margin-top: 34px;
-  background-color: #fdfbf7;
-  border: 1px solid #e7e1d8;
-  border-radius: 18px;
-  padding: 18px;
-}
-
-.mini-title{
-  margin: 0 0 12px;
-  font-size: 16px;
-  font-weight: 800;
-  color: #1f2937;
-}
-
-.data-table{
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 14px;
-}
-
-.data-table caption{
-  text-align: left;
-  color: #6b7280;
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-
-.data-table th,
-.data-table td{
-  padding: 12px;
-  border-top: 1px solid #e7e1d8;
-  text-align: left;
-  font-size: 14px;
-}
-
-.data-table thead th{
-  border-top: none;
-  background-color: #eaf4ee;
-  color: #1f2937;
-  font-weight: 800;
-}
-
-/* 
-   Features (3 columns)
- */
+/* Features (3 columns) - keep only ONE version */
 .features-grid{
   margin-top: 40px;
   display: grid;
@@ -322,20 +202,24 @@ body{
 }
 
 .feature-card{
+  background-color: #fdfbf7;
+  border: 1px solid #e7e1d8;
+  border-radius: 22px;
+  padding: 32px 22px;
   text-align: center;
-  padding: 20px 10px;
 }
 
 .feature-icon{
-  width: 66px;
-  height: 66px;
+  width: 64px;
+  height: 64px;
   margin: 0 auto 18px;
-  border-radius: 18px;
+  border-radius: 16px;
   background-color: #eaf4ee;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 28px;
+  line-height: 1;
 }
 
 .feature-title{
@@ -346,7 +230,7 @@ body{
 }
 
 .feature-text{
-  max-width: 340px;
+  max-width: 320px;
   margin: 0 auto 14px;
   color: #6b7280;
   font-size: 14px;
@@ -365,115 +249,10 @@ body{
   content: "• ";
 }
 
-.jump-links{
-  margin-top: 26px;
-  text-align: center;
-  color: #6b7280;
-  font-size: 13px;
-}
-
-.jump-links .link{
-  color: #2f5d4a;
-  text-decoration: none;
-}
-
-.jump-links .link:hover{
-  text-decoration: underline;
-}
-
-.link-sep{
-  margin: 0 10px;
-}
-
-/* =========================
-   Form (Get updates)
-========================= */
-.form{
-  max-width: 760px;
-  margin-top: 18px;
-}
-
-.form-fieldset{
-  border: 1px solid #e7e1d8;
-  border-radius: 18px;
-  padding: 18px;
-  background-color: #fdfbf7;
-  margin: 0 0 16px;
-}
-
-.form-legend{
-  padding: 0 8px;
-  font-weight: 800;
-  color: #1f2937;
-}
-
-.form-row{
-  display: grid;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.form-row label{
-  font-size: 13px;
-  font-weight: 700;
-  color: #1f2937;
-}
-
-.input{
-  width: 100%;
-  padding: 12px;
-  border-radius: 14px;
-  border: 1px solid #e7e1d8;
-  background-color: #ffffff;
-  font-size: 14px;
-  outline: none;
-}
-
-.input:focus{
-  border-color: #2f5d4a;
-}
-
-.form-actions{
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-/* =========================
-   Footer small fixes (your footer already styled in index.css)
-========================= */
-.footerLinks{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footerLinks li{
-  margin-bottom: 10px;
-}
-
-.socialMediaIcons{
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.socialMediaIcons img{
-  width: 26px;
-  height: 26px;
-  display: block;
-}
-
-/* =========================
-   Responsive
-========================= */
+/* Responsive */
 @media (max-width: 900px){
   .section-grid{
     grid-template-columns: 1fr;
-  }
-
-  .side-card{
-    justify-content: center;
   }
 
   .cards-grid{
@@ -503,74 +282,3 @@ body{
     width: 100%;
   }
 }
-/*Features (cards layout)*/
-.features-grid{
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.feature-card{
-  background-color: #fdfbf7;
-  border: 1px solid #e7e1d8;
-  border-radius: 22px;
-  padding: 32px 22px;
-  text-align: center;
-}
-
-.feature-icon{
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 18px;
-  border-radius: 16px;
-  background-color: #eaf4ee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-}
-
-.feature-title{
-  font-family: "Georgia", "Times New Roman", serif;
-  font-size: 22px;
-  color: #1f2937;
-  margin: 0 0 10px;
-}
-
-.feature-text{
-  max-width: 320px;
-  margin: 0 auto 14px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.feature-list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #6b7280;
-  display: grid;
-  gap: 6px;
-}
-.footer-contact ul,
-.footer-contact li{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* spacing between lines */
-.footer-contact li{
-  margin-bottom: 10px;
-}
-.feature-list li::before{
-  content: "• ";
-}
-@media (max-width: 900px){
-  .features-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-
