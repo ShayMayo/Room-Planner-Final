@@ -65,9 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // HAMBURGER TOGGLE
-
-  const hamburgerBtn = document.querySelector("#hamburgerBtn");
+// HAMBURGER TOGGLE
+const hamburgerBtn = document.getElementById("hamburgerBtn");
 const navMenu = document.querySelector(".navLinks");
 
 if (hamburgerBtn && navMenu) {
@@ -75,5 +74,6 @@ if (hamburgerBtn && navMenu) {
     navMenu.classList.toggle("nav-active");
   });
 }
+
 
 });
