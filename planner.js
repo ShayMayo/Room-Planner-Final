@@ -58,8 +58,39 @@ function UpdateTotalPrice(){
     if(displayPrice){
         displayPrice.innerHTML = totalPrice;
     }
+    DisplayReceipt();
 }
+function DisplayReceipt(){
+    const list = document.getElementById("receipt-list");
+    if(!list){
+        return;
+    }
+    list.innerHTML = "";
 
+    const items = {};
+
+    roomState.forEach(furniture => {
+        if(furniture && parseInt(furniture.price) > 0){
+            const name = furniture.name || "Furniture";
+            if(!items[name]){
+                items[name] = {count: 0, price: parseInt(furniture.price)};
+            }
+            items[name].count++;
+        }
+    })
+
+    for(let name in items){
+        const li = document.createElement("li");
+        const total = items[name].count * items[name].price;
+        let countText = "";
+        if(items[name].count > 1){
+            countText = " x" + items[name].count;
+        }
+
+        li.innerHTML = "<span>" + name + countText + "</span> <span>$" + total + "</span>";
+        list.appendChild(li);
+    }
+}
 function resetGrid(){
     let blocks = document.querySelectorAll(".grid-block");
     blocks.forEach(block => {
@@ -147,6 +178,7 @@ blocks.forEach(block => {
                 icon: icon,
                 size: size,
                 price: price,
+                name: name,
                 rotation: 0
             }
             roomState[index + 1] = {
