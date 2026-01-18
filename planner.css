@@ -1,12 +1,14 @@
 .hamburgerBtn {
     display: none; 
-   
+    /* no hamburBtn in screens differet than mobile */
 }
 
+/* only in mobile need to see the the hamburBtn */
 @media (max-width: 768px) {
     
     .hamburgerBtn {
         display: block;
+        /* displays the btn */
         background: none;
         border: none;
         padding: 0;
@@ -40,13 +42,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%; /* Reduced padding from 15px */
-    background-color: #ffffff;
+    padding: 15px 5%;
+    background-color: #eaf4ee;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
+    /* makes sure the navBar stays at the top at all times */
     top: 0;
     z-index: 1000;
 }
+
 .navLinks {
     display: flex;      
     gap: 30px;
@@ -54,6 +58,57 @@
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.navLinks a {
+    text-decoration: none;
+    /* no underline */
+    color: #355f4b;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.hamburgerBtn {
+    display: none; 
+    /* no hamburBtn in screens differet than mobile */
+}
+
+/* only in mobile need to see the the hamburBtn */
+@media (max-width: 768px) {
+    .navLinks.nav-active {
+        display: flex;
+    }
+
+    .hamburgerBtn {
+        display: block;
+        /* displays the btn */
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #355f4b;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+    /* dont want any links on mobile */
+    .navLinks {
+        display: none; 
+        /*later the menue will be opened  */
+       flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #eaf4ee;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        z-index: 100;
+    }
 }
 
 .navLinks a {
@@ -106,7 +161,7 @@ flex-grow: 1;
 .reset-button {
     margin-top: auto;
     padding: 12px;
-    background-color: #ff4d4d;
+    background-color: #355f4b;
     color: white;
     border: none;
     border-radius: 8px;
@@ -115,17 +170,13 @@ flex-grow: 1;
     transition: background-color 0.2s, transform 0.1s;
 }
 
-.reset-button:hover {
-    background-color: #e60000;
-}
-
 .reset-button:active {
     transform: scale(0.98);
 }
 
 body {
     font-family: "Assistant", sans-serif;
-    background-color: #fdfdfd;
+    background-color: #f7f3ee;
     color: #333;
     margin: 0;
     padding: 10px; /* Reduced from 20px */
@@ -301,4 +352,164 @@ h2 {
 }
 #F6F0D7{
   background-color: #F6F0D7;
+}
+
+.footer {
+    background-color: #1f2937;
+    padding-top: 70px;
+    margin-top: 100px;
+    color: #555;
+    border-top: 1px solid #cfe3d8;
+}
+
+.footerContainer {
+    max-width: 1200px;
+    /* for the responsivity */
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    /* the side spaces */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+    /* default-mobile, only one colum */
+}
+
+/* there isnt much content in the footer so I can make sure that only in the mobile there are different colums */
+/* anything but mobile - 4 colums in the footer */
+@media (min-width: 768px) {
+    .footerContainer {
+        grid-template-columns: repeat(4, 1fr);
+        /*the same as we did in the chess board */
+    }
+}
+
+/* the footer title, call an attribute not a class */
+footer h3 {
+    color: #f0a16b;
+    font-size: 1.2rem; 
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footerBrandDescription {
+    font-size: 0.9rem; 
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 250px;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* !!!!!!!!!!!!might need to cahnge thje logo photo size, need to think about that!!!!!!!!!!11 */
+.footerLogo img{
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+ /* removes the background from the image */
+    mix-blend-mode: multiply;
+}
+
+.logoText {
+    font-weight: bold;
+    font-size: 1.25rem; 
+    color: #f0a16b;
+}
+
+.socialMediaIcons {
+    display: flex;
+    gap: 15px;
+
+}
+.socialMediaIcons a {
+     text-decoration: none; 
+    /* takes off the underline from the link */
+}
+
+.socialMediaIcons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+.socialMediaIcons a:first-child img {
+    /* fixing the instagram problem */
+    transform: scale(1.4); 
+}
+
+.footerLinks {
+    list-style: none; 
+    /* takes off the actual bullet visual from the list */
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinks li {
+    margin-bottom: 12px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.9rem; 
+}
+
+.footerContactOptions {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContactOptions li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.contactUsIcons {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+.footerBottom {
+    margin-top: 60px;
+    border-top: 1px solid #dce5e0;
+    padding: 30px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    /* default-phone-one underneath another */
+    align-items: center;
+    gap: 15px;
+    
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem; 
+    color: #888;
+}
+
+.footerLegalyLinks a {
+    text-decoration: none;
+    /* no underline in the links */
+    color: #888;
+    margin-left: 20px;
+}
+
+/* only in phone size it doesnt have place, in all the other screens its ok */
+@media (min-width: 768px) {
+    .footerBottom {
+        flex-direction: row; 
+        /* one row */
+        justify-content: space-between; 
+    }
 }
