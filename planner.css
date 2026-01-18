@@ -1,14 +1,12 @@
 .hamburgerBtn {
     display: none; 
-    /* no hamburBtn in screens differet than mobile */
+   
 }
 
-/* only in mobile need to see the the hamburBtn */
 @media (max-width: 768px) {
     
     .hamburgerBtn {
         display: block;
-        /* displays the btn */
         background: none;
         border: none;
         padding: 0;
