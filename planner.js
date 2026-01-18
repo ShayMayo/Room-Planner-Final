@@ -1,3 +1,30 @@
+// HAMBURGER MENU
+const hamburgerBtn = document.querySelector("#hamburgerBtn");
+const navMenu = document.querySelector(".navLinks");
+// turn the mouse icon into curser icon
+hamburgerBtn.style.cursor = "pointer";
+
+hamburgerBtn.addEventListener("click", function() {
+    if (navMenu.classList.contains("nav-active")) {
+        navMenu.classList.remove("nav-active");
+    } else {
+        navMenu.classList.add("nav-active");
+    }
+});
+
+// NAVBAR LINLS
+const navLinks = document.querySelectorAll(".navLinks a");
+
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("mouseover", function() {
+        this.classList.add("text-highlight");
+    });
+    navLinks[i].addEventListener("mouseout", function() {
+        this.classList.remove("text-highlight");
+    });
+}
+
+
 let roomState = new Array (100).fill(null);
 let draggedFurniture = null;
 

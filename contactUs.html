@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>2D Room Planner</title>
-    <link rel="stylesheet" href="planner.css">
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="contactUs.css">
 </head>
+
 <body>
-    <header class="mainNavbar">
+   <header class="mainNavbar">
 
         <div class="navLogo">
             <span class="logoText">RoomCraft Catalog</span>
@@ -29,86 +32,54 @@
 
     </header>
 
-    <main>
-        <aside id="sidebar">
-    <h3>Room Settings</h3>
+  <h1>Contact Us</h1>
+  <p>Please fill in the form below</p>
 
-    <h3>Wall Color:</h3>
-    <div class="color-picker-container">
-        <div class="wallColorPicker" id="EA7B7B"></div>
-        <div class="wallColorPicker" id="D25353"></div>
-        <div class="wallColorPicker" id="FFEAD3"></div>
-        <div class="wallColorPicker" id="white"></div>
-        <div class="wallColorPicker" id="DAD887"></div>
-        <div class="wallColorPicker" id="grey"></div>
-        <div class="wallColorPicker" id="C5D89D"></div>
-        <div class="wallColorPicker" id="F6F0D7"></div>
+  <form id="contactForm">
+
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" name="fullName">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option value="">Choose topic</option>
+      <option value="support">Support</option>
+      <option value="feedback">Feedback</option>
+      <option value="business">Business</option>
+    </select>
+
+    <p>Preferred contact method</p>
+    <label>
+      <input type="radio" name="contactMethod" value="email">
+      Email
+    </label>
+
+    <label>
+      <input type="radio" name="contactMethod" value="phone">
+      Phone
+    </label>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5"></textarea>
+
+    <label>
+      <input type="checkbox" id="agree">
+      I agree to be contacted
+    </label>
+
+    <div class="buttons">
+      <input type="submit" value="Send">
+      <input type="reset" value="Clear">
     </div>
 
-    <h3>Furniture Library</h3>
-    <div class="furniture-library-grid">
-        <div class="furniture-card" draggable="true" data-icon="🛋️" data-size="2" data-price="2450" data-name="Modern 3-Seat Sofa">
-            <span>🛋️</span>
-            <div class="card-label">Sofa (3-Seat)</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🛋️" data-size="2" data-price="1850" data-name="Classic Sofa">
-            <span>🛋️</span>
-            <div class="card-label">Classic Sofa</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🍽️" data-size="2" data-price="1399" data-name="Oak Dining Table">
-            <span>🍽️</span>
-            <div class="card-label">Dining Table</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🛏️" data-size="2" data-price="3580" data-name="Premium King Bed">
-            <span>🛏️</span>
-            <div class="card-label">King Bed</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="☕" data-size="1" data-price="2120" data-name="Wooden Coffee Table">
-            <span>☕</span>
-            <div class="card-label">Coffee Table</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🪑" data-size="1" data-price="675" data-name="Scandinavian Armchair">
-            <span>🪑</span>
-            <div class="card-label">Armchair</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🪴" data-size="1" data-price="360" data-name="Ceramic Plant Pot">
-            <span>🪴</span>
-            <div class="card-label">Plant Pot</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="📚" data-size="1" data-price="135" data-name="Designer Book Set">
-            <span>📚</span>
-            <div class="card-label">Books</div>
-        </div>
-
-        <div class="furniture-card" draggable="true" data-icon="🚪" data-size="1" data-price="450" data-name="Modern Interior Door">
-            <span>🚪</span>
-            <div class="card-label">Modern Door</div>
-        </div>
-    </div>
-    
-</aside>
-
-        <div id="planner-grid">
-            <div id="room-grid" class="grid-container">
-                
-            </div>    
-        </div>
-        <div class = "receipt-section">
-            <h3>Receipt Summary</h3>
-            <ul id="receipt-list" class="receipt-list"></ul>
-            <p>Total cost: <span id = "total-price"></span></p>
-            <button id="reset-button" class="reset-button">Clear All</button>
-        </div>
-
-    </main>
-    <footer>
+  </form>
+<footer>
         <div class="footerContainer">
 
             <div class="footerBrand">
@@ -179,6 +150,6 @@
             </div>
         </div>
     </footer>
-    <script src="planner.js"></script>
+  <script src="contactUs.js"></script>
 </body>
 </html>
