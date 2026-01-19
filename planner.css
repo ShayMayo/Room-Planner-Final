@@ -1,14 +1,48 @@
+
+body {
+    font-family: "Assistant", sans-serif;
+    background-color: #f7f3ee;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+}
+
+.mainNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #eaf4ee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navLinks {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #355f4b;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
 .hamburgerBtn {
-    display: none; 
-    /* no hamburBtn in screens differet than mobile */
+    display: none;
 }
 
 /* only in mobile need to see the the hamburBtn */
 @media (max-width: 768px) {
-    
     .hamburgerBtn {
         display: block;
-        /* displays the btn */
         background: none;
         border: none;
         padding: 0;
@@ -21,11 +55,9 @@
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
     }
-    /* dont want any links on mobile */
     .navLinks {
-        display: none; 
-        /*later the menue will be opened  */
-       flex-direction: column;
+        display: none;
+        flex-direction: column;
         width: 100%;
         position: absolute;
         top: 60px;
@@ -36,101 +68,149 @@
         text-align: center;
         z-index: 100;
     }
-}
-
-.mainNavbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #eaf4ee;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    /* makes sure the navBar stays at the top at all times */
-    top: 0;
-    z-index: 1000;
-}
-
-.navLinks {
-    display: flex;      
-    gap: 30px;
-    list-style: none;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.navLinks a {
-    text-decoration: none;
-    /* no underline */
-    color: #355f4b;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.hamburgerBtn {
-    display: none; 
-    /* no hamburBtn in screens differet than mobile */
-}
-
-/* only in mobile need to see the the hamburBtn */
-@media (max-width: 768px) {
     .navLinks.nav-active {
         display: flex;
     }
-
-    .hamburgerBtn {
-        display: block;
-        /* displays the btn */
-        background: none;
-        border: none;
-        padding: 0;
-    }
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #355f4b;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-    }
-    /* dont want any links on mobile */
-    .navLinks {
-        display: none; 
-        /*later the menue will be opened  */
-       flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #eaf4ee;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        text-align: center;
-        z-index: 100;
-    }
 }
 
-.navLinks a {
-    text-decoration: none;
-    /* no underline */
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+/* --- Main Layout --- */
 main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;           
-    padding: 10px 20px; /* Reduced top padding */
-    align-items: flex-start; /* Alignment to the top instead of center */
+    gap: 20px;
+    padding: 10px 20px;
+    align-items: flex-start;
 }
-.dragged{
-  opacity: 0.4;
-  transform: 0.8;
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
-.receipt-section {
+
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sidebar {
+    width: 280px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-right: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sidebar h3 {
+    margin: 15px 0 5px 0;
+    font-size: 1.1em;
+}
+
+.shortcutsInfo {
+    background-color: #eaf4ee;
+    border: 1px solid #cfe3d8;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #355f4b;
+}
+
+.furnitureLibraryGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    padding-right: 5px;
+}
+
+.furnitureCard {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: grab;
+    transition: all 0.2s;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.furnitureCard:hover {
+    border-color: #4CAF50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.furnitureCard span {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.furnitureCard .cardLabel {
+    font-size: 20px;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.dragged {
+    opacity: 0.4;
+}
+/* --- Planner Grid --- */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    width: 500px;
+    height: 500px;
+    border: 2px solid #333;
+}
+
+.gridBlock {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgb(210, 210, 210);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    position: relative;
+    background-color: white;
+    transform: none !important;
+}
+
+.gridBlock span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+.gridBlock.isLarge {
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 40px;
+    z-index: 5;
+}
+
+.gridBlock.isSelected {
+    outline: 3px solid #f0a16b !important;
+    z-index: 10px;
+}
+
+/* --- Receipt Section --- */
+.receiptSection {
     width: 25%;
     min-height: 400px;
     background-color: #ffffff;
@@ -144,21 +224,22 @@ main {
     gap: 15px;
 }
 
-.receipt-list{
-list-style: none;
-padding: 0;
-margin: 0;
-flex-grow: 1;
-}
-.receipt-list li{
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid black;
-  font-size: 0.95 rem;
+.receiptList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
 }
 
-.reset-button {
+.receiptList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid black;
+    font-size: 0.95rem;
+}
+
+.resetButton {
     margin-top: auto;
     padding: 12px;
     background-color: #355f4b;
@@ -170,155 +251,30 @@ flex-grow: 1;
     transition: background-color 0.2s, transform 0.1s;
 }
 
-.reset-button:active {
+.resetButton:active {
     transform: scale(0.98);
-}
-
-body {
-    font-family: "Assistant", sans-serif;
-    background-color: #f7f3ee;
-    color: #333;
-    margin: 0;
-    padding: 10px; /* Reduced from 20px */
-}
-
-h1 {
-    margin-top: 10px; /* Pulls the title higher */
-    margin-bottom: 5px;
 }
 
 h2 {
     font-weight: 400;
     color: #666;
-    margin-top: 0;      /* Removes top gap */
-    margin-bottom: 20px; /* Reduced from 40px */
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.grid-container{
+/* --- Color Picker --- */
+.colorPickerContainer {
     display: grid;
-    grid-template-columns: repeat(10, 50px); 
-    grid-template-rows: repeat(10, 50px); 
-    width: 500px;
-    height: 500px;
-    border: 2px solid #333;
-}
-.grid-block{
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: 1px solid rgb(210, 210, 210);
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-
-    position: relative;
-    background-color: white;
-
-    transform: none !important;
-}
-.grid-block span {
-    display: inline-block; /* MUST be inline-block to rotate */
-    transition: transform 0.3s ease;
-    pointer-events: none;
-    user-select: none;
-}
-
-.grid-block {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border: 1px solid rgb(210, 210, 210);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    position: relative;
-    /* Removed global transform to prevent conflict with rotation */
-}
-
-.grid-block.is-large {
-    overflow: visible;         
-    width: 100px;             
-    justify-content: center;
-    align-items: center; 
-    padding-left: 10px;       
-    font-size: 40px;           
-    z-index: 5;              
-}
-#sidebar {
-    width: 280px; /* Increased width for text room */
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-right: 2px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#sidebar h3 {
-    margin: 15px 0 5px 0; /* consistent spacing */
-    font-size: 1.1em;
-}
-.furniture-library-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 5px;
-    padding-right: 5px;
-}
-
-.furniture-card {
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    cursor: grab;
-    transition: all 0.2s;
-    aspect-ratio: 1 / 1; 
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-}
-
-.furniture-card:hover {
-    border-color: #4CAF50;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.furniture-card span {
-    font-size: 45px; 
-    margin-bottom: 5px;
-}
-
-.furniture-card .card-label {
-    font-size: 20px;
-    font-weight: 600;
-    color: #555;
-    line-height: 1.2;
-    pointer-events: none;
-}
-
-.color-picker-container {
-    display: grid;
-    /* This creates 4 equal columns of 35px each */
-    grid-template-columns: repeat(4, 35px); 
-    gap: 8px; /* Space between the squares */
+    grid-template-columns: repeat(4, 35px);
+    gap: 8px;
     margin-top: 5px;
-    /* Remove max-width and flex-wrap as they are no longer needed for Grid */
 }
 
 .wallColorPicker {
     width: 35px;
     height: 35px;
     border: 1px solid #333;
-    border-radius: 6px; /* A bit more rounded looks modern */
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -329,31 +285,16 @@ h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-#EA7B7B{
-  background-color: #EA7B7B;
-}
-#D25353{
-  background-color: #D25353;
-}
-#FFEAD3{
-  background-color: #FFEAD3;
-}
-#white{
-  background-color: white;
-}
-#DAD887{
-  background-color: #DAD887;
-}
-#grey{
-  background-color: grey;
-}
-#C5D89D{
-  background-color: #C5D89D;
-}
-#F6F0D7{
-  background-color: #F6F0D7;
-}
+#EA7B7B { background-color: #EA7B7B; }
+#D25353 { background-color: #D25353; }
+#FFEAD3 { background-color: #FFEAD3; }
+#white { background-color: white; }
+#DAD887 { background-color: #DAD887; }
+#grey { background-color: grey; }
+#C5D89D { background-color: #C5D89D; }
+#F6F0D7 { background-color: #F6F0D7; }
 
+/* --- Footer --- */
 .footer {
     background-color: #1f2937;
     padding-top: 70px;
@@ -364,35 +305,28 @@ h2 {
 
 .footerContainer {
     max-width: 1200px;
-    /* for the responsivity */
     margin: 0 auto;
-    padding: 0 1.25rem; 
-    /* the side spaces */
+    padding: 0 1.25rem;
     display: grid;
     gap: 40px;
     grid-template-columns: 1fr;
-    /* default-mobile, only one colum */
 }
 
-/* there isnt much content in the footer so I can make sure that only in the mobile there are different colums */
-/* anything but mobile - 4 colums in the footer */
 @media (min-width: 768px) {
     .footerContainer {
         grid-template-columns: repeat(4, 1fr);
-        /*the same as we did in the chess board */
     }
 }
 
-/* the footer title, call an attribute not a class */
 footer h3 {
     color: #f0a16b;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     margin-bottom: 25px;
     font-weight: 600;
 }
 
 .footerBrandDescription {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     color: #666;
     margin-bottom: 20px;
     max-width: 250px;
@@ -405,30 +339,27 @@ footer h3 {
     gap: 10px;
 }
 
-/* !!!!!!!!!!!!might need to cahnge thje logo photo size, need to think about that!!!!!!!!!!11 */
 .footerLogo img{
     width: 80px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
- /* removes the background from the image */
     mix-blend-mode: multiply;
 }
 
 .logoText {
     font-weight: bold;
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
     color: #f0a16b;
 }
 
 .socialMediaIcons {
     display: flex;
     gap: 15px;
-
 }
+
 .socialMediaIcons a {
-     text-decoration: none; 
-    /* takes off the underline from the link */
+     text-decoration: none;
 }
 
 .socialMediaIcons img {
@@ -437,14 +368,13 @@ footer h3 {
     object-fit: contain;
     opacity: 0.7;
 }
+
 .socialMediaIcons a:first-child img {
-    /* fixing the instagram problem */
-    transform: scale(1.4); 
+    transform: scale(1.4);
 }
 
 .footerLinks {
-    list-style: none; 
-    /* takes off the actual bullet visual from the list */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -456,7 +386,7 @@ footer h3 {
 .footerLinks a {
     text-decoration: none;
     color: #1f2937;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
 }
 
 .footerContactOptions {
@@ -484,32 +414,26 @@ footer h3 {
     margin-top: 60px;
     border-top: 1px solid #dce5e0;
     padding: 30px 20px;
-    
     display: flex;
     flex-direction: column;
-    /* default-phone-one underneath another */
     align-items: center;
     gap: 15px;
-    
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     color: #888;
 }
 
 .footerLegalyLinks a {
     text-decoration: none;
-    /* no underline in the links */
     color: #888;
     margin-left: 20px;
 }
 
-/* only in phone size it doesnt have place, in all the other screens its ok */
 @media (min-width: 768px) {
     .footerBottom {
-        flex-direction: row; 
-        /* one row */
-        justify-content: space-between; 
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

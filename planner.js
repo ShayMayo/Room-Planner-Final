@@ -27,11 +27,11 @@ for (let i = 0; i < navLinks.length; i++) {
 
 let roomState = new Array (100).fill(null);
 let draggedFurniture = null;
-
-const gridContainer = document.getElementById("room-grid")
+let selectedBlockIndex = null;
+const gridContainer = document.getElementById("roomGrid")
 for(let i=0; i<100; i++){
     const block = document.createElement("div");
-    block.classList.add("grid-block");
+    block.classList.add("gridBlock");
     block.dataset.index = i;
     gridContainer.appendChild(block);
 }
@@ -45,7 +45,7 @@ function LoadFromLocalStorage(){
     
     if(savedDesign){
         roomState = JSON.parse(savedDesign);
-        const blocks = document.querySelectorAll(".grid-block");
+        const blocks = document.querySelectorAll(".gridBlock");
         roomState.forEach((data,index) => {
             if(data !== null){
                 const block = blocks[index];
@@ -56,7 +56,7 @@ function LoadFromLocalStorage(){
                     iconSpan.style.transform = "rotate(" + data.rotation + "deg)";
                 }
                 if(data.size === "2" && data.price > "0"){
-                        block.classList.add("is-large");
+                        block.classList.add("isLarge");
                 }
             }
         });
@@ -67,7 +67,7 @@ function LoadFromLocalStorage(){
 LoadFromLocalStorage();
 
 function changeColor(color){
-    let blocks = document.querySelectorAll(".grid-block");
+    let blocks = document.querySelectorAll(".gridBlock");
     blocks.forEach(block => {
         block.style.backgroundColor = color;
     });
@@ -81,14 +81,14 @@ function UpdateTotalPrice(){
             totalPrice += parseInt(furniture.price)
         }
     });
-    const displayPrice = document.getElementById("total-price")
+    const displayPrice = document.getElementById("totalPrice")
     if(displayPrice){
-        displayPrice.innerHTML = totalPrice;
+        displayPrice.innerHTML = totalPrice + "$";
     }
     DisplayReceipt();
 }
 function DisplayReceipt(){
-    const list = document.getElementById("receipt-list");
+    const list = document.getElementById("receiptList");
     if(!list){
         return;
     }
@@ -119,11 +119,11 @@ function DisplayReceipt(){
     }
 }
 function resetGrid(){
-    let blocks = document.querySelectorAll(".grid-block");
+    let blocks = document.querySelectorAll(".gridBlock");
     blocks.forEach(block => {
         block.style.backgroundColor = "white";
         block.innerHTML = "";
-        block.classList.remove("is-large");
+        block.classList.remove("isLarge");
     })
     roomState.fill(null);
     SaveToLocalStorage();
@@ -141,11 +141,11 @@ for(let i=0; i<numberOfColorChangers; i++){
     })
 }
 
-document.getElementById("reset-button").addEventListener("click", function(){
+document.getElementById("resetButton").addEventListener("click", function(){
     resetGrid()
 })
 
-const cards = document.querySelectorAll('.furniture-card');
+const cards = document.querySelectorAll('.furnitureCard');
 cards.forEach(card => {
     card.addEventListener('dragstart', function(event) {
         draggedFurniture = this;
@@ -161,7 +161,7 @@ cards.forEach(card => {
     })
 });
 
-const blocks = document.querySelectorAll(".grid-block")
+const blocks = document.querySelectorAll(".gridBlock")
 blocks.forEach(block => {
     block.addEventListener("dragover", function(event){
         event.preventDefault();
@@ -198,8 +198,8 @@ blocks.forEach(block => {
             if(currentTop !== nextTop){
                 return(alert("No room for a big furniture"));
             }
-            this.innerHTML = "<span>" + icon + "</span>";;
-            this.classList.add("is-large");
+            this.innerHTML = "<span>" + icon + "</span>";
+            this.classList.add("isLarge");
             nextBlock.innerHTML = " ";
             roomState[index] = {
                 icon: icon,
@@ -220,8 +220,14 @@ blocks.forEach(block => {
 
     block.addEventListener("click", function(){
         const index = parseInt(this.dataset.index);
+        if(selectedBlockIndex !== null && blocks[selectedBlockIndex]){
+            blocks[selectedBlockIndex].classList.remove("isSelected");
+        }
+        selectedBlockIndex = index;
+        this.classList.add("isSelected");
+
         const data = roomState[index];
-        
+
         if(data){
             data.rotation = (data.rotation + 90) % 360;
             const iconSpan = this.querySelector("span");
@@ -229,7 +235,61 @@ blocks.forEach(block => {
                 iconSpan.style.transform = "rotate(" + data.rotation + "deg)";
                 iconSpan.style.transition = "transform 0.3s ease";
             }
+            SaveToLocalStorage();
         }
-        SaveToLocalStorage();
-    })
+    });
+});
+
+document.addEventListener("keydown", function(event){
+    if((event.key === "r" || event.key === "R") && selectedBlockIndex !== null){
+        const data = roomState[selectedBlockIndex];
+
+        if(data){
+            data.rotation = (data.rotation + 90) % 360;
+            const block = blocks[selectedBlockIndex];
+            const iconSpan = block.querySelector("span");
+            if(iconSpan){
+                iconSpan.style.transform = "rotate(" + data.rotation + "deg)";
+                iconSpan.style.transition = "transform 0.3s ease";
+            }
+            SaveToLocalStorage();
+        }
+    } 
+    else if ((event.key === "Delete" || event.key === "Backspace") && selectedBlockIndex !== null) {
+        const index = selectedBlockIndex;
+        const data = roomState[index];
+
+        if (data) {
+            if (data.size === "2") {
+                let mainIndex;
+                // Check if the selected block is the second part of a large item
+                if (data.price == 0 && index > 0 && roomState[index - 1] && roomState[index - 1].size === "2") {
+                    mainIndex = index - 1;
+                } 
+                else { 
+                    mainIndex = index;
+                }
+
+                roomState[mainIndex] = null;
+                roomState[mainIndex + 1] = null;
+
+                const firstBlock = blocks[mainIndex];
+                const secondBlock = blocks[mainIndex + 1];
+
+                firstBlock.innerHTML = "";
+                firstBlock.classList.remove("isLarge", "isSelected");
+                secondBlock.innerHTML = "";
+                secondBlock.classList.remove("isSelected");
+            } 
+            else { 
+                roomState[index] = null;
+                blocks[index].innerHTML = "";
+                blocks[index].classList.remove("isSelected");
+            }
+
+            selectedBlockIndex = null;
+            SaveToLocalStorage();
+            UpdateTotalPrice();
+        }
+    }
 })
