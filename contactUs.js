@@ -38,6 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     alert("Form submitted successfully");
     form.reset();
+    window.location.href = "planner.html";
   });
-
 });
