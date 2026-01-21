@@ -166,16 +166,18 @@ h1 {
 /* --- Planner Grid --- */
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(10, 50px);
-    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     width: 500px;
     height: 500px;
     border: 2px solid #333;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .gridBlock {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     border: 1px solid rgb(210, 210, 210);
     box-sizing: border-box;
@@ -196,7 +198,7 @@ h1 {
 }
 
 .gridBlock.isLarge {
-    width: 100px;
+    width: 200%;
     justify-content: center;
     align-items: center;
     padding-left: 10px;
@@ -435,5 +437,60 @@ footer h3 {
     .footerBottom {
         flex-direction: row;
         justify-content: space-between;
+    }
+}
+
+/* --- Responsive Design --- */
+
+/* Desktop / Laptop (max-width: 1024px) */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    .furnitureLibraryGrid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .receiptSection {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjustments for tablet if necessary, mostly covered by 1024px logic */
+    .gridContainer {
+        max-width: 100%;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .gridContainer {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gridBlock {
+        font-size: 5vw; /* Scale icons with viewport */
+    }
+
+    .gridBlock.isLarge {
+        font-size: 8vw;
+    }
+    
+    .furnitureCard span {
+        font-size: 30px;
     }
 }
