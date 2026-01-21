@@ -114,7 +114,7 @@ h1 {
     border: 1px solid #cfe3d8;
     border-radius: 8px;
     padding: 10px 15px;
-    font-size: 0.85rem;
+    font-size: 1fr;
     color: #355f4b;
 }
 
@@ -166,10 +166,10 @@ h1 {
 /* --- Planner Grid --- */
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    width: 500px;
-    height: 500px;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    width: 504px;
+    height: 504px;
     border: 2px solid #333;
     margin: 0 auto;
     box-sizing: border-box;
@@ -208,7 +208,7 @@ h1 {
 
 .gridBlock.isSelected {
     outline: 3px solid #f0a16b !important;
-    z-index: 10px;
+    z-index: 10;
 }
 
 /* --- Receipt Section --- */
@@ -267,14 +267,14 @@ h2 {
 /* --- Color Picker --- */
 .colorPickerContainer {
     display: grid;
-    grid-template-columns: repeat(4, 35px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
     margin-top: 5px;
 }
 
 .wallColorPicker {
-    width: 35px;
-    height: 35px;
+    width: 100%;
+    height: 50px;
     border: 1px solid #333;
     border-radius: 6px;
     cursor: pointer;
@@ -307,7 +307,7 @@ h2 {
 
 .footerContainer {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto;
     padding: 0 1.25rem;
     display: grid;
     gap: 40px;
@@ -342,10 +342,10 @@ footer h3 {
 }
 
 .footerLogo img{
-    width: 80px;
+    width: 50px;
     height: auto;
     object-fit: contain;
-    margin-right: 10px;
+    margin-right: 0;
     mix-blend-mode: multiply;
 }
 
