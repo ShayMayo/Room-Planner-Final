@@ -12,7 +12,7 @@ hamburgerBtn.addEventListener("click", function() {
     }
 });
 
-// NAVBAR LINLS
+// NAVBAR LINKS
 const navLinks = document.querySelectorAll(".navLinks a");
 
 for (let i = 0; i < navLinks.length; i++) {
