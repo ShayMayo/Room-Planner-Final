@@ -176,7 +176,7 @@ h2 {
 
 /* the photo inside the card area */
 .cardContainer {
-    background-color: #eaeaea; 
+    background-color: #f9fafb; 
     height: 200px;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -188,8 +188,9 @@ h2 {
 }
 
 .cardContainer img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
     /* making sure the photo stays in the middle */
