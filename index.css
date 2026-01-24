@@ -5,25 +5,23 @@
   box-sizing: border-box;
 }
 
-/* BASE */
+/* PAGE BASE */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: "Assistant", sans-serif;
-  line-height: 1.5;
-  font-optical-sizing: auto;
+  background-color: #f7f3ee;
   color: #1f2937;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
-/* CONTAINERS */
-.cta-container,
-.tools-container,
-.preview-container,
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* BUTTON */
+/* SHARED */
 .button {
   display: inline-block;
   padding: 12px 24px;
@@ -34,189 +32,129 @@ body {
   cursor: pointer;
 }
 
-/* NAVBAR */
+/* NAVBAR  */
 .mainNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #eaf4ee;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  z-index: 9999;
-  background-color: #eaf4ee;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 72px;
-  padding: 15px 5%;
+  z-index: 1000;
 }
 
-/* LOGO */
-.logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-image {
-  height: 85px;
-  width: auto;
-  display: block;
-}
-
-.logo-name {
-  color: #f0a16b;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.logo-tagline {
-  color: #5f7f71;
-  font-size: 12px;
-  display: block;
-}
-
-/* NAV LINKS */
 .navLinks {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  list-style: none;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navLinks a {
   text-decoration: none;
   color: #355f4b;
-  font-size: 15px;
   font-weight: 500;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
 
 .navLinks a:hover {
-  background: transparent;
   color: #f0a16b;
   font-weight: 700;
 }
 
 .navLinks a[aria-current="page"] {
-  background: transparent;
   color: #f0a16b;
   font-weight: 700;
 }
 
-/* HEADER BUTTON */
-.header-actions .button {
-  background-color: #f0a16b;
-  color: #1f2937;
-  border-radius: 999px;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 700;
-  transition: background-color 0.2s;
-}
-
-.header-actions .button:hover {
-  background-color: #e89358;
-}
-
-/* HAMBURGER */
 .hamburgerBtn {
   display: none;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
 }
 
-.hamburgerBtn .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #355f4b;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-}
-
-/* HERO */
-.cta-section {
-  position: relative;
+/* HERO SECTION */
+.ctaSection {
   padding: 90px 20px;
   text-align: center;
-  color: #000000;
+  color: #000;
   background-image: url("/images/ROOM.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.cta-title {
+.ctaTitle {
   font-size: 36px;
   margin-bottom: 16px;
 }
 
-.cta-description {
+.ctaDescription {
   max-width: 600px;
   margin: 0 auto 24px;
   font-size: 18px;
 }
 
-.cta-section .button {
+.ctaSection .button {
   background-color: #f0a16b;
   color: #1f2937;
   padding: 14px 28px;
   border-radius: 999px;
 }
 
-.cta-section .button:hover {
+.ctaSection .button:hover {
   background-color: #e89358;
 }
 
 /* TOOLS SECTION */
-.tools-section {
+.toolsSection {
   background-color: #f7f3ee;
   padding: 70px 20px;
 }
 
-.section-header {
+.sectionHeader {
   text-align: center;
   margin-bottom: 35px;
 }
 
-.section-title {
+.sectionTitle {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 34px;
   color: #1f2937;
   margin-bottom: 10px;
 }
 
-.section-subtitle {
+.sectionSubtitle {
   color: #6b7280;
   max-width: 650px;
   margin: 0 auto;
   font-size: 16px;
 }
 
-.tools-grid {
+.toolsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.tool-card {
+.toolCard {
   background-color: #ffffff;
   border: 1px solid #e7e1d8;
   border-radius: 22px;
   padding: 34px 28px;
-  box-shadow: none;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.tool-card:hover {
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+.toolCard:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
 
-.tool-icon {
+.toolIcon {
   width: 58px;
   height: 58px;
   border-radius: 16px;
@@ -229,52 +167,49 @@ body {
   line-height: 1;
 }
 
-.tool-title {
-  font-size: 28px;
-  margin-bottom: 14px;
+.toolTitle {
+  font-size: 24px;
+  margin-bottom: 12px;
   color: #1f2937;
 }
 
-.tool-text {
+.toolText {
   font-size: 16px;
   line-height: 1.8;
   color: #6b7280;
 }
 
 /* HOME PREVIEW SECTION */
-.home-preview-section {
+.homePreviewSection {
   background-color: #2f5d4a;
   padding: 80px 20px;
 }
 
-.home-preview-section .preview-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+.previewContainer {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.home-preview-section .preview-text {
-  flex: 1;
+.previewText {
   text-align: center;
   max-width: 720px;
   margin: 0 auto;
 }
 
-.home-preview-section .section-title {
+.homePreviewSection .sectionTitle {
   color: #ffffff;
   font-size: 44px;
   margin-bottom: 12px;
 }
 
-.home-preview-section .section-subtitle {
+.homePreviewSection .sectionSubtitle {
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
   max-width: 560px;
   margin: 0 auto 18px;
 }
 
-.home-preview-section .preview-list {
+.previewList {
   list-style: none;
   padding: 0;
   margin: 18px auto 0;
@@ -282,11 +217,11 @@ body {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.home-preview-section .preview-list li {
+.previewList li {
   margin: 10px 0;
 }
 
-.home-preview-section .preview-actions {
+.previewActions {
   margin-top: 26px;
   display: flex;
   justify-content: center;
@@ -294,138 +229,125 @@ body {
   flex-wrap: wrap;
 }
 
-.home-preview-section .button {
+.homePreviewSection .button {
   background-color: #f0a16b;
   color: #1f2937;
   border-radius: 999px;
   padding: 12px 22px;
   font-size: 14px;
   font-weight: 700;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s, transform 0.2s;
 }
 
-.home-preview-section .button:hover {
+.homePreviewSection .button:hover {
   background-color: #e89358;
   transform: translateY(-2px);
 }
 
-/* PREVIEW IMAGE */
-.preview-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid #e7e1d8;
+/* FOOTER (same as catalog) */
+.footer {
+  background-color: #1f2937;
+  padding-top: 70px;
+  margin-top: 100px;
+  color: #555;
+  border-top: 1px solid #cfe3d8;
 }
 
-/* FOOTER (looks like the screenshot) */
-footer {
-  background-color: #f7f3ee;
-  border-top: 1px solid #e7e1d8;
-  padding: 60px 20px 24px;
-  margin-top: 0;
-  color: #1f2937;
-}
-
-/* 4 columns on desktop */
 .footerContainer {
-  align-items: start;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1.25rem;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.2fr;
-  gap: 18px;
-  padding: 0;
+  gap: 40px;
+  grid-template-columns: 1fr;
 }
 
-/* titles */
 footer h3 {
-  margin-top: 0;
   color: #f0a16b;
   font-size: 1.2rem;
-  margin-bottom: 14px;
-  font-weight: 700;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
-/* brand block */
 .footerBrandDescription {
-  font-size: 0.95rem;
-  color: #6b7280;
-  max-width: 320px;
-  line-height: 1.7;
-  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 250px;
 }
 
 .footerLogo {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
   gap: 10px;
-  margin-bottom: 12px;
 }
 
 .footerLogo img {
-  width: 70px;
+  width: 80px;
   height: auto;
   object-fit: contain;
+  margin-right: 10px;
   mix-blend-mode: multiply;
 }
 
 .logoText {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.25rem;
   color: #f0a16b;
 }
 
-/* social */
 .socialMediaIcons {
   display: flex;
-  gap: 10px;
-  margin-top: 14px;
+  gap: 15px;
+}
+
+.socialMediaIcons a {
+  text-decoration: none;
 }
 
 .socialMediaIcons img {
-  width: 26px;
-  height: 26px;
-  display: block;
-  opacity: 0.85;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.7;
 }
 
-/* lists */
-.footerLinks,
-.footerContactOptions {
+.socialMediaIcons a:first-child img {
+  transform: scale(1.4);
+}
+
+.footerLinks {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footerLinks li,
-.footerContactOptions li {
-  margin-bottom: 10px;
+.footerLinks li {
+  margin-bottom: 12px;
 }
 
-/* links */
-.footerLinks a,
-.footerContactOptions a {
-  color: #111827;
+.footerLinks a {
   text-decoration: none;
+  color: #1f2937;
+  font-size: 0.9rem;
 }
 
-.footerLinks a:hover,
-.footerContactOptions a:hover {
-  text-decoration: underline;
-  color: #2f5d4a;
+.footerContactOptions {
+  list-style: none;
+  padding: 0;
 }
 
-/* contact rows with icons */
 .footerContactOptions li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: #6b7280;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .contactUsIcons {
@@ -435,43 +357,67 @@ footer h3 {
   margin-top: 3px;
 }
 
-/* bottom bar */
 .footerBottom {
-  max-width: 1200px;
-  margin: 28px auto 0;
-  padding-top: 18px;
-  border-top: 1px solid #e7e1d8;
+  margin-top: 60px;
+  border-top: 1px solid #dce5e0;
+  padding: 30px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-.footerBottom p {
-  margin: 0;
+  gap: 15px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8rem;
+  color: #888;
 }
 
 .footerLegalyLinks a {
-  color: #6b7280;
   text-decoration: none;
+  color: #888;
   margin-left: 20px;
 }
 
-.footerLegalyLinks a:hover {
-  text-decoration: underline;
-  color: #2f5d4a;
-}
-
-/* responsive footer */
-@media (max-width: 900px) {
-  .footerContainer {
-    grid-template-columns: 1fr 1fr;
+/* RESPONSIVE (only medium + phone) */
+@media (max-width: 768px) {
+  .navLinks.nav-active {
+    display: flex;
   }
-}
 
-@media (max-width: 480px) {
+  .hamburgerBtn {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #355f4b;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #eaf4ee;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 100;
+  }
+
+  .toolsGrid {
+    grid-template-columns: 1fr;
+  }
+
   .footerContainer {
     grid-template-columns: 1fr;
   }
@@ -487,83 +433,16 @@ footer h3 {
   }
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .tools-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .home-preview-section .preview-container {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  /* hamburger visible like catalog */
-  .mainNavbar {
-    position: relative;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .hamburgerBtn {
-    display: block;
-  }
-
-  .navLinks {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    background-color: #eaf4ee;
-    padding: 20px 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    gap: 22px;
-    z-index: 100;
-  }
-
-  .navLinks.nav-active {
-    display: flex;
-  }
-
-  .navLinks a {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  .tools-grid {
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 768px) {
-    .footerBottom {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .footerBottom {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
 @media (max-width: 480px) {
-  .cta-title {
+  .ctaTitle {
     font-size: 28px;
   }
 
-  .cta-description {
+  .ctaDescription {
     font-size: 16px;
   }
 
-  .home-preview-section .section-title {
+  .homePreviewSection .sectionTitle {
     font-size: 34px;
   }
 }
