@@ -1,4 +1,3 @@
-/*css file*/
 /* RESET */
 * {
   margin: 0;
@@ -9,10 +8,10 @@
 /* BASE */
 body {
   font-family: "Assistant", sans-serif;
-  line-height: 1.5;
-  font-optical-sizing: auto;
-  color: #1f2937;
-  background-color: #ffffff;
+    background-color: #f7f3ee;
+    color: #1f2937;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
@@ -21,7 +20,7 @@ body {
   padding: 0 20px;
 }
 
-/* BUTTON */
+/* SHARED BUTTONS */
 .button,
 .btn {
   display: inline-block;
@@ -47,7 +46,7 @@ body {
   padding: 15px 5%;
 }
 
-/* LOGO */
+/* NAVBAR LOGO */
 .logo {
   text-decoration: none;
   display: flex;
@@ -56,25 +55,25 @@ body {
   color: inherit;
 }
 
-.logo-image {
+.logoImage {
   height: 85px;
   width: auto;
   display: block;
 }
 
-.logo-text {
+.logoText {
   display: inline-flex;
   flex-direction: column;
   line-height: 1.05;
 }
 
-.logo-name {
+.logoName {
   color: #f0a16b;
   font-size: 18px;
   font-weight: 700;
 }
 
-.logo-tagline {
+.logoTagline {
   color: #5f7f71;
   font-size: 12px;
   display: block;
@@ -130,7 +129,7 @@ body {
 }
 
 /* PAGE LAYOUT */
-.site-main {
+.siteMain {
   background-color: #f7f3ee;
 }
 
@@ -139,31 +138,32 @@ body {
   padding: 70px 0 35px;
 }
 
-.hero-inner {
+.heroInner {
   text-align: center;
 }
 
-.hero-title {
+.heroTitle {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 44px;
   color: #1f2937;
   margin-bottom: 12px;
 }
 
-.hero-subtitle {
+.heroSubtitle {
   max-width: 780px;
   margin: 0 auto;
   font-size: 16px;
   color: #6b7280;
 }
 
-.section-divider {
+/* DIVIDER */
+.sectionDivider {
   border: none;
   border-top: 1px solid #e7e1d8;
 }
 
-/* TABS */
-.about-tabs {
+/* ABOUT TABS */
+.aboutTabs {
   display: flex;
   justify-content: center;
   gap: 14px;
@@ -171,7 +171,7 @@ body {
   flex-wrap: wrap;
 }
 
-.about-tab {
+.aboutTab {
   background: transparent;
   border: 1px solid #e7e1d8;
   padding: 10px 18px;
@@ -181,7 +181,7 @@ body {
   color: #355f4b;
 }
 
-.about-tab.is-active {
+.aboutTab.isActive {
   background: #2f5d4a;
   border-color: #2f5d4a;
   color: #ffffff;
@@ -196,34 +196,34 @@ body {
   text-align: center;
 }
 
-.section-title {
+.sectionTitle {
   font-size: 34px;
   color: #1f2937;
   margin-bottom: 10px;
 }
 
-.section-subtitle {
+.sectionSubtitle {
   color: #6b7280;
   max-width: 650px;
   margin: 0 auto;
   font-size: 16px;
 }
 
-.section-text {
+.sectionText {
   color: #6b7280;
   font-size: 16px;
   line-height: 1.8;
   margin-top: 14px;
 }
 
-/* MISSION */
-.section-grid {
+/* MISSION BLOCK */
+.sectionGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
 }
 
-.content-block {
+.contentBlock {
   background: #ffffff;
   border: 1px solid #e7e1d8;
   border-radius: 22px;
@@ -243,13 +243,14 @@ body {
   margin-bottom: 14px;
 }
 
-.pill-green {
+.pillGreen {
   background: #eaf4ee;
   color: #2f5d4a;
   border: 1px solid #cfe3d8;
 }
 
-.btn-primary {
+/* PRIMARY BUTTON */
+.btnPrimary {
   margin-top: 18px;
   background-color: #f0a16b;
   color: #1f2937;
@@ -259,23 +260,23 @@ body {
   font-weight: 700;
 }
 
-.btn-primary:hover {
+.btnPrimary:hover {
   background-color: #e89358;
 }
 
-.btn-icon {
+.btnIcon {
   margin-left: 6px;
 }
 
 /* VALUES GRID */
-.cards-grid {
+.cardsGrid {
   margin-top: 26px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.value-card {
+.valueCard {
   background: #ffffff;
   border: 1px solid #e7e1d8;
   border-radius: 22px;
@@ -283,12 +284,12 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.value-card:hover {
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+.valueCard:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
 
-.icon-badge {
+.iconBadge {
   width: 58px;
   height: 58px;
   border-radius: 16px;
@@ -301,27 +302,27 @@ body {
   color: #2f5d4a;
 }
 
-.value-title {
+.valueTitle {
   font-size: 28px;
   margin-bottom: 14px;
   color: #1f2937;
 }
 
-.value-text {
+.valueText {
   font-size: 16px;
   line-height: 1.8;
   color: #6b7280;
 }
 
 /* FEATURES GRID */
-.features-grid {
+.featuresGrid {
   margin-top: 26px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.feature-card {
+.featureCard {
   background: #ffffff;
   border: 1px solid #e7e1d8;
   border-radius: 22px;
@@ -329,12 +330,12 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.feature-card:hover {
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+.featureCard:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
 
-.feature-icon {
+.featureIcon {
   width: 58px;
   height: 58px;
   border-radius: 16px;
@@ -346,232 +347,186 @@ body {
   font-size: 22px;
 }
 
-.feature-title {
+.featureTitle {
   font-size: 22px;
   margin-bottom: 10px;
   color: #1f2937;
 }
 
-.feature-text {
+.featureText {
   font-size: 16px;
   line-height: 1.8;
   color: #6b7280;
 }
 
-.feature-list {
+.featureList {
   margin-top: 14px;
   padding-left: 18px;
   color: #6b7280;
 }
 
-.feature-list li {
+.featureList li {
   margin: 8px 0;
 }
 
-/* FOOTER - same as catalog/index */
-footer {
-  background-color: #f7f3ee;
-  border-top: 1px solid #e7e1d8;
-  padding: 60px 20px 24px;
-  color: #1f2937;
+/* FOOTER */
+/* FOOTER*/
+.footer {
+    background-color: #1f2937;
+    padding-top: 70px;
+    margin-top: 100px;
+    color: #555;
+    border-top: 1px solid #cfe3d8;
 }
 
 .footerContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  display: grid;
-  gap: 40px;
-  grid-template-columns: 2fr 1fr 1fr 1.2fr;
-  align-items: start;
+    max-width: 1200px;
+    /* for the responsivity */
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    /* the side spaces */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+    /* default-mobile, only one colum */
 }
 
+/* there isnt much content in the footer so I can make sure that only in the mobile there are different colums */
+/* anything but mobile - 4 colums in the footer */
+@media (min-width: 768px) {
+    .footerContainer {
+        grid-template-columns: repeat(4, 1fr);
+        /*the same as we did in the chess board */
+    }
+}
+
+/* the footer title, call an attribute not a class */
 footer h3 {
-  color: #f0a16b;
-  font-size: 1.2rem;
-  margin-bottom: 14px;
-  font-weight: 700;
-  margin-top: 0;
+    color: #f0a16b;
+    font-size: 1.2rem; 
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .footerBrandDescription {
-  font-size: 0.95rem;
-  color: #6b7280;
-  margin-bottom: 20px;
-  max-width: 320px;
+    font-size: 0.9rem; 
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 250px;
 }
 
 .footerLogo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.footerLogo img {
-  width: 70px;
-  height: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
+/* !!!!!!!!!!!!might need to cahnge thje logo photo size, need to think about that!!!!!!!!!!11 */
+.footerLogo img{
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+ /* removes the background from the image */
+    mix-blend-mode: multiply;
 }
 
 .logoText {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #f0a16b;
+    font-weight: bold;
+    font-size: 1.25rem; 
+    color: #f0a16b;
 }
 
 .socialMediaIcons {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
+    display: flex;
+    gap: 15px;
+
+}
+.socialMediaIcons a {
+     text-decoration: none; 
+    /* takes off the underline from the link */
 }
 
 .socialMediaIcons img {
-  width: 26px;
-  height: 26px;
-  display: block;
-  opacity: 0.85;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+.socialMediaIcons a:first-child img {
+    /* fixing the instagram problem */
+    transform: scale(1.4); 
 }
 
-.footerLinks,
+.footerLinks {
+    list-style: none; 
+    /* takes off the actual bullet visual from the list */
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinks li {
+    margin-bottom: 12px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.9rem; 
+}
+
 .footerContactOptions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footerLinks li,
-.footerContactOptions li {
-  margin-bottom: 10px;
-}
-
-.footerLinks a,
-.footerContactOptions a {
-  color: #111827;
-  text-decoration: none;
-}
-
-.footerLinks a:hover,
-.footerContactOptions a:hover {
-  text-decoration: underline;
-  color: #2f5d4a;
+    list-style: none;
+    padding: 0;
 }
 
 .footerContactOptions li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: #6b7280;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .contactUsIcons {
-  width: 18px;
-  height: 18px;
-  opacity: 0.8;
-  margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    margin-top: 3px;
 }
 
 .footerBottom {
-  max-width: 1200px;
-  margin: 28px auto 0;
-  padding-top: 18px;
-  border-top: 1px solid #e7e1d8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-.footerBottom p {
-  margin: 0;
+    margin-top: 60px;
+    border-top: 1px solid #dce5e0;
+    padding: 30px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    /* default-phone-one underneath another */
+    align-items: center;
+    gap: 15px;
+    
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem; 
+    color: #888;
 }
 
 .footerLegalyLinks a {
-  color: #6b7280;
-  text-decoration: none;
-  margin-left: 20px;
+    text-decoration: none;
+    /* no underline in the links */
+    color: #888;
+    margin-left: 20px;
 }
 
-.footerLegalyLinks a:hover {
-  text-decoration: underline;
-  color: #2f5d4a;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .cards-grid,
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  /* hamburger and dropdown like catalog/index */
-  .mainNavbar {
-    position: relative;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .hamburgerBtn {
-    display: block;
-  }
-
-  .navLinks {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    background-color: #eaf4ee;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    z-index: 100;
-    gap: 22px;
-  }
-
-  .navLinks.nav-active {
-    display: flex;
-  }
-
-  .navLinks a {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  /* footer responsive */
-  .footerContainer {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footerBottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footerLegalyLinks a {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .cards-grid,
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footerContainer {
-    grid-template-columns: 1fr;
-  }
+/* only in phone size it doesnt have place, in all the other screens its ok */
+@media (min-width: 768px) {
+    .footerBottom {
+        flex-direction: row; 
+        /* one row */
+        justify-content: space-between; 
+    }
 }
