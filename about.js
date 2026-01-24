@@ -103,4 +103,81 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transition = "";
     });
   }
+  // Keyboard navigation for About page
+
+// collect all cards (values + features)
+const aboutCards = document.querySelectorAll(".valueCard, .featureCard");
+let currentCardIndex = 0;
+
+// make cards focusable with keyboard
+for (let i = 0; i < aboutCards.length; i++) {
+  aboutCards[i].setAttribute("tabindex", "0");
+
+  // keep track of the focused card
+  aboutCards[i].addEventListener("focus", function () {
+    currentCardIndex = i;
+  });
+}
+
+// move focus between cards
+function focusAboutCard(index) {
+  if (!aboutCards.length) return;
+
+  // loop navigation
+  if (index < 0) index = aboutCards.length - 1;
+  if (index >= aboutCards.length) index = 0;
+
+  currentCardIndex = index;
+  aboutCards[currentCardIndex].focus();
+}
+
+document.addEventListener("keydown", function (e) {
+  // ignore typing inside inputs
+  const tag = document.activeElement.tagName.toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
+
+  // arrows – move between cards
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+    e.preventDefault();
+    focusAboutCard(currentCardIndex + 1);
+  }
+
+  if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+    e.preventDefault();
+    focusAboutCard(currentCardIndex - 1);
+  }
+
+  // Enter – activate card content
+  if (e.key === "Enter") {
+    const focusedCard = document.activeElement;
+    if (
+      focusedCard.classList.contains("valueCard") ||
+      focusedCard.classList.contains("featureCard")
+    ) {
+      const link = focusedCard.querySelector("a, button");
+      if (link) link.click();
+    }
+  }
+
+  // M key – jump to Mission section
+  if (e.key === "m" || e.key === "M") {
+    const mission = document.getElementById("mission");
+    if (mission) {
+      mission.setAttribute("tabindex", "-1");
+      mission.focus();
+      mission.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  // V key – jump to Values section
+  if (e.key === "v" || e.key === "V") {
+    const values = document.getElementById("values");
+    if (values) {
+      values.setAttribute("tabindex", "-1");
+      values.focus();
+      values.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
+
 });
