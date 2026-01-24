@@ -494,3 +494,10 @@ footer h3 {
     font-size: 34px;
   }
 }
+/* POP EFFECT */
+/* mouseover the card, js will make it happen */
+
+.navLinks a.text-highlight {
+    color: #f0a16b;
+    font-weight: 700;
+}
