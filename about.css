@@ -542,3 +542,10 @@ footer h3 {
     justify-content: space-between;
   }
 }
+/* POP EFFECT */
+/* mouseover the card, js will make it happen */
+
+.navLinks a.text-highlight {
+    color: #f0a16b;
+    font-weight: 700;
+}

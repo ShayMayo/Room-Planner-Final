@@ -1,4 +1,4 @@
-.hamburgerBtn {
+differet.hamburgerBtn {
     display: none; 
     /* no hamburBtn in screens differet than mobile */
 }
@@ -98,7 +98,7 @@
     .navLinks {
         display: none; 
         /*later the menue will be opened  */
-       flex-direction: column;
+        flex-direction: column;
         width: 100%;
         position: absolute;
         top: 60px;

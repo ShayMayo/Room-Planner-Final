@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // NAV HOVER
-  const navLinks = document.querySelectorAll(".navLinks a");
-  for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener("mouseover", function () {
-      this.style.color = "#e67e22";
-      this.style.fontWeight = "700";
-    });
+  // NAVBAR LINKS HOVER
+const navLinks = document.querySelectorAll(".navLinks a");
 
-    navLinks[i].addEventListener("mouseout", function () {
-      this.style.color = "";
-      this.style.fontWeight = "";
-    });
-  }
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("mouseover", function () {
+    this.classList.add("text-highlight");
+  });
+
+  navLinks[i].addEventListener("mouseout", function () {
+    this.classList.remove("text-highlight");
+  });
+}
 
   // CARD HOVER (About: values + features)
   const aboutCards = document.querySelectorAll(".valueCard, .featureCard");
@@ -103,27 +102,21 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transition = "";
     });
   }
-  // Keyboard navigation for About page
-
-// collect all cards (values + features)
-const aboutCards = document.querySelectorAll(".valueCard, .featureCard");
+  // KEYBOARD NAV (About)
 let currentCardIndex = 0;
 
 // make cards focusable with keyboard
 for (let i = 0; i < aboutCards.length; i++) {
   aboutCards[i].setAttribute("tabindex", "0");
 
-  // keep track of the focused card
   aboutCards[i].addEventListener("focus", function () {
     currentCardIndex = i;
   });
 }
 
-// move focus between cards
 function focusAboutCard(index) {
   if (!aboutCards.length) return;
 
-  // loop navigation
   if (index < 0) index = aboutCards.length - 1;
   if (index >= aboutCards.length) index = 0;
 
@@ -132,11 +125,9 @@ function focusAboutCard(index) {
 }
 
 document.addEventListener("keydown", function (e) {
-  // ignore typing inside inputs
   const tag = document.activeElement.tagName.toLowerCase();
   if (tag === "input" || tag === "textarea") return;
 
-  // arrows – move between cards
   if (e.key === "ArrowRight" || e.key === "ArrowDown") {
     e.preventDefault();
     focusAboutCard(currentCardIndex + 1);
@@ -147,7 +138,6 @@ document.addEventListener("keydown", function (e) {
     focusAboutCard(currentCardIndex - 1);
   }
 
-  // Enter – activate card content
   if (e.key === "Enter") {
     const focusedCard = document.activeElement;
     if (
@@ -159,7 +149,6 @@ document.addEventListener("keydown", function (e) {
     }
   }
 
-  // M key – jump to Mission section
   if (e.key === "m" || e.key === "M") {
     const mission = document.getElementById("mission");
     if (mission) {
@@ -169,7 +158,6 @@ document.addEventListener("keydown", function (e) {
     }
   }
 
-  // V key – jump to Values section
   if (e.key === "v" || e.key === "V") {
     const values = document.getElementById("values");
     if (values) {

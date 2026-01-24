@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // NAV HOVER
-  const navLinks = document.querySelectorAll(".navLinks a");
-  for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener("mouseover", function () {
-      this.style.color = "#e67e22";
-      this.style.fontWeight = "700";
-    });
+   // NAVBAR LINKS HOVER
+const navLinks = document.querySelectorAll(".navLinks a");
 
-    navLinks[i].addEventListener("mouseout", function () {
-      this.style.color = "";
-      this.style.fontWeight = "";
-    });
-  }
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("mouseover", function () {
+    this.classList.add("text-highlight");
+  });
+
+  navLinks[i].addEventListener("mouseout", function () {
+    this.classList.remove("text-highlight");
+  });
+}
 
   const form = document.getElementById("contactForm");
 
