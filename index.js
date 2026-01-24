@@ -2,29 +2,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // NAV HOVER
   const navLinks = document.querySelectorAll(".navLinks a");
-
   for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("mouseover", function () {
-      navLinks[i].style.color = "#e67e22";
-      navLinks[i].style.fontWeight = "700";
+      this.style.color = "#e67e22";
+      this.style.fontWeight = "700";
     });
-
     navLinks[i].addEventListener("mouseout", function () {
-      navLinks[i].style.color = "";
-      navLinks[i].style.fontWeight = "";
+      this.style.color = "";
+      this.style.fontWeight = "";
     });
   }
 
   // CARD HOVER
-  const homeCards = document.querySelectorAll(".tool-card");
-
+  const homeCards = document.querySelectorAll(".toolCard");
   for (let i = 0; i < homeCards.length; i++) {
     homeCards[i].addEventListener("mouseover", function () {
       this.style.boxShadow = "0 10px 25px rgba(0,0,0,0.12)";
       this.style.transform = "translateY(-4px)";
       this.style.transition = "transform 0.2s, box-shadow 0.2s";
     });
-
     homeCards[i].addEventListener("mouseout", function () {
       this.style.boxShadow = "";
       this.style.transform = "";
@@ -33,30 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // FOOTER LINKS HOVER
-  const footerLinks = document.querySelectorAll(".site-footer a");
-
+  const footerLinks = document.querySelectorAll("footer a");
   for (let i = 0; i < footerLinks.length; i++) {
     footerLinks[i].addEventListener("mouseover", function () {
       this.style.textDecoration = "underline";
       this.style.color = "#2f5d4a";
     });
-
     footerLinks[i].addEventListener("mouseout", function () {
       this.style.textDecoration = "";
       this.style.color = "";
     });
   }
 
-
-  const ctaButtons = document.querySelectorAll(".home-preview-section .button");
-
+  // CTA BUTTON HOVER
+  const ctaButtons = document.querySelectorAll(".homePreviewSection .button");
   for (let i = 0; i < ctaButtons.length; i++) {
     ctaButtons[i].addEventListener("mouseover", function () {
       this.style.backgroundColor = "#e89358";
       this.style.transform = "translateY(-2px)";
       this.style.transition = "background-color 0.2s, transform 0.2s";
     });
-
     ctaButtons[i].addEventListener("mouseout", function () {
       this.style.backgroundColor = "";
       this.style.transform = "";
@@ -64,16 +56,73 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // HAMBURGER TOGGLE
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const navMenu = document.querySelector(".navLinks");
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("nav-active");
+    });
+  }
+//  Keyboard navigation between cards:
+// Allows users to move between cards using the arrow keys
+// and activate the focused card using the Enter key.
+//
+  const keyboardCards = document.querySelectorAll(".toolCard");
 
-// HAMBURGER TOGGLE
-const hamburgerBtn = document.getElementById("hamburgerBtn");
-const navMenu = document.querySelector(".navLinks");
+  let currentCardIndex = 0;
 
-if (hamburgerBtn && navMenu) {
-  hamburgerBtn.addEventListener("click", function () {
-    navMenu.classList.toggle("nav-active");
+
+  for (let i = 0; i < keyboardCards.length; i++) {
+    keyboardCards[i].setAttribute("tabindex", "0");
+
+    keyboardCards[i].addEventListener("focus", function () {
+      currentCardIndex = i;
+    });
+  }
+
+  function focusCard(index) {
+    if (!keyboardCards.length) return;
+
+    if (index < 0) index = keyboardCards.length - 1;
+    if (index >= keyboardCards.length) index = 0;
+
+    currentCardIndex = index;
+    keyboardCards[currentCardIndex].focus();
+  }
+
+  document.addEventListener("keydown", function (e) {
+    const tag = document.activeElement.tagName.toLowerCase();
+    if (tag === "input" || tag === "textarea") return;
+    
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+      e.preventDefault();
+      focusCard(currentCardIndex + 1);
+    }
+
+    if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+      e.preventDefault();
+      focusCard(currentCardIndex - 1);
+    }
+
+    
+    if (e.key === "Enter") {
+      const focusedCard = document.activeElement;
+      if (focusedCard.classList.contains("toolCard")) {
+        const link = focusedCard.querySelector("a, button");
+        if (link) link.click();
+      }
+    }
+
+    // Jump to main content:
+    // Pressing the "M" key moves the focus directly to the main content area.
+    if (e.key === "m" || e.key === "M") {
+      const main = document.getElementById("main");
+      if (main) {
+        main.setAttribute("tabindex", "-1");
+        main.focus();
+        main.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   });
-}
-
-
 });
