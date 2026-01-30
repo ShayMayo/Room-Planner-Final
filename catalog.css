@@ -201,7 +201,7 @@ h2 {
 
 
 .productCard {
-    background-color: #ffffff;
+    background-color: #FFF;
     border: 1px solid #e7e1d8;
     border-radius: 16px;
     padding: 15px;
@@ -212,7 +212,7 @@ h2 {
 
 /* the photo inside the card area */
 .cardContainer {
-    background-color: #eaeaea; 
+    background-color: #f0efeb; 
     height: 200px;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -229,6 +229,27 @@ h2 {
     display: block;
     margin: 0 auto;
     /* making sure the photo stays in the middle */
+    /* blending the background of the photo with the card */
+    mix-blend-mode: multiply; 
+    filter: brightness(1.03);
+}
+
+#doorImg,
+#officeBooksImg,
+#regularBooksImg,
+#plantImg{
+    width: 120px !important; 
+    height: 120px !important; 
+    
+    object-fit: cover; 
+    object-position: center bottom; 
+    
+    /* absolute postion in order to not mess with the text */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px; 
+    mix-blend-mode: multiply;
 }
 
 /* the small label - living room etc */
