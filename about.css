@@ -386,161 +386,203 @@ body {
 }
 
 
-/* FOOTER*/
+/* --- Footer --- */
 .footer {
-  background-color: #1f2937;
-  padding-top: 70px;
-  margin-top: 100px;
-  color: #555;
-  border-top: 1px solid #cfe3d8;
+    background-color: #1f2937;
+    padding-top: 70px;
+    margin-top: 100px;
+    color: #555;
+    border-top: 1px solid #cfe3d8;
 }
 
 .footerContainer {
-  max-width: 1200px;
-  /* for the responsivity */
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  /* the side spaces */
-  display: grid;
-  gap: 40px;
-  grid-template-columns: 1fr;
-  /* default-mobile, only one colum */
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 1.25rem;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
 }
 
-/* there isnt much content in the footer so I can make sure that only in the mobile there are different colums */
-/* anything but mobile - 4 colums in the footer */
 @media (min-width: 768px) {
-  .footerContainer {
-    grid-template-columns: repeat(4, 1fr);
-    /*the same as we did in the chess board */
-  }
+    .footerContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
-/* the footer title, call an attribute not a class */
 footer h3 {
-  color: #f0a16b;
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  font-weight: 600;
+    color: #f0a16b;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .footerBrandDescription {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 20px;
-  max-width: 250px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 250px;
 }
 
 .footerLogo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
-/* !!!!!!!!!!!!might need to cahnge thje logo photo size, need to think about that!!!!!!!!!!11 */
-.footerLogo img {
-  width: 80px;
-  height: auto;
-  object-fit: contain;
-  margin-right: 10px;
-  /* removes the background from the image */
-  mix-blend-mode: multiply;
+.footerLogo img{
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 0;
+    mix-blend-mode: multiply;
 }
 
+.logoText {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #f0a16b;
+}
 
 .socialMediaIcons {
-  display: flex;
-  gap: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 .socialMediaIcons a {
-  text-decoration: none;
-  /* takes off the underline from the link */
+     text-decoration: none;
 }
 
 .socialMediaIcons img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  opacity: 0.7;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
 }
 
 .socialMediaIcons a:first-child img {
-  /* fixing the instagram problem */
-  transform: scale(1.4);
+    transform: scale(1.4);
 }
 
 .footerLinks {
-  list-style: none;
-  /* takes off the actual bullet visual from the list */
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footerLinks li {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .footerLinks a {
-  text-decoration: none;
-  color: #1f2937;
-  font-size: 0.9rem;
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.9rem;
 }
 
 .footerContactOptions {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footerContactOptions li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-  color: #666;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .contactUsIcons {
-  width: 18px;
-  height: 18px;
-  opacity: 0.8;
-  margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    margin-top: 3px;
 }
 
 .footerBottom {
-  margin-top: 60px;
-  border-top: 1px solid #dce5e0;
-  padding: 30px 20px;
-
-  display: flex;
-  flex-direction: column;
-  /* default-phone-one underneath another */
-  align-items: center;
-  gap: 15px;
-
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.8rem;
-  color: #888;
+    margin-top: 60px;
+    border-top: 1px solid #dce5e0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem;
+    color: #888;
 }
 
 .footerLegalyLinks a {
-  text-decoration: none;
-  /* no underline in the links */
-  color: #888;
-  margin-left: 20px;
+    text-decoration: none;
+    color: #888;
+    margin-left: 20px;
 }
 
-/* only in phone size it doesnt have place, in all the other screens its ok */
 @media (min-width: 768px) {
-  .footerBottom {
-    flex-direction: row;
-    /* one row */
-    justify-content: space-between;
-  }
+    .footerBottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* --- Responsive Design --- */
+
+/* Desktop / Laptop (max-width: 1024px) */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    .furnitureLibraryGrid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .receiptSection {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjustments for tablet if necessary, mostly covered by 1024px logic */
+    .gridContainer {
+        max-width: 100%;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .gridContainer {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gridBlock {
+        font-size: 5vw; /* Scale icons with viewport */
+    }
+
+    .gridBlock.isLarge {
+        font-size: 8vw;
+    }
+    
+    .furnitureCard span {
+        font-size: 30px;
+    }
 }
 /* POP EFFECT */
 /* mouseover the card, js will make it happen */
