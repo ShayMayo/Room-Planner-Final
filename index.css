@@ -357,7 +357,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* --- Footer --- */
+* --- Footer --- */
 .footer {
     background-color: #1f2937;
     padding-top: 70px;
@@ -384,7 +384,7 @@ body {
 footer h3 {
     color: #f0a16b;
     font-size: 1.2rem;
-    margin-bottom: 25px;
+    margin: 1em 0 25px;
     font-weight: 600;
 }
 
