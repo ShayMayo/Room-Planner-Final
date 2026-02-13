@@ -120,6 +120,43 @@
   }
 }
 
+/* NAVBAR LOGO */
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+}
+
+.logoImage {
+  height: 85px;
+  width: auto;
+  display: block;
+}
+
+.logoText {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.05;
+
+  /* merged duplicate footer styles into the same class */
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #f0a16b;
+}
+
+.logoName {
+  color: #f0a16b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logoTagline {
+  color: #5f7f71;
+  font-size: 12px;
+  display: block;
+}
 
 body {
     font-family: "Assistant", sans-serif;
