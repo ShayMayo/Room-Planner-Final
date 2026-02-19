@@ -2,6 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
    // NAVBAR LINKS HOVER
 const navLinks = document.querySelectorAll(".navLinks a");
 
+  // HAMBURGER TOGGLE
+const hamburgerBtn = document.querySelector("#hamburgerBtn");
+  const navMenu = document.querySelector(".navLinks");
+hamburgerBtn.addEventListener("click", function() {
+    if (navMenu.classList.contains("nav-active")) {
+        navMenu.classList.remove("nav-active");
+    } else {
+        navMenu.classList.add("nav-active");
+    }
+});
+
+
+
 for (let i = 0; i < navLinks.length; i++) {
   navLinks[i].addEventListener("mouseover", function () {
     this.classList.add("text-highlight");

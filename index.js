@@ -57,13 +57,15 @@ for (let i = 0; i < navLinks.length; i++) {
   }
 
   // HAMBURGER TOGGLE
-  const hamburgerBtn = document.getElementById("hamburgerBtn");
+const hamburgerBtn = document.querySelector("#hamburgerBtn");
   const navMenu = document.querySelector(".navLinks");
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener("click", function () {
-      navMenu.classList.toggle("nav-active");
-    });
-  }
+hamburgerBtn.addEventListener("click", function() {
+    if (navMenu.classList.contains("nav-active")) {
+        navMenu.classList.remove("nav-active");
+    } else {
+        navMenu.classList.add("nav-active");
+    }
+});
 //  Keyboard navigation between cards:
 // Allows users to move between cards using the arrow keys
 // and activate the focused card using the Enter key.

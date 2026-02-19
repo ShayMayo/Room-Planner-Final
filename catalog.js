@@ -1,14 +1,8 @@
- // HAMBURGER TOGGLE
-  const hamburgerBtn = document.getElementById("hamburgerBtn");
-  const navMenu = document.querySelector(".navLinks");
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener("click", function () {
-      navMenu.classList.toggle("nav-active");
-    });
-  }
-// turn the mouse icon into curser icon
-hamburgerBtn.style.cursor = "pointer";
 
+
+// HAMBURGER TOGGLE
+const hamburgerBtn = document.querySelector("#hamburgerBtn");
+const navMenu = document.querySelector(".navLinks");
 hamburgerBtn.addEventListener("click", function() {
     if (navMenu.classList.contains("nav-active")) {
         navMenu.classList.remove("nav-active");
@@ -16,6 +10,7 @@ hamburgerBtn.addEventListener("click", function() {
         navMenu.classList.add("nav-active");
     }
 });
+
 
 // VIEW DETAILS
 const buttons = document.querySelectorAll(".detailsLink");
