@@ -182,11 +182,13 @@ body {
   padding: 90px 20px;
   text-align: center;
   color: #000;
-  background-image: url("/images/ROOM.jpg");
+
+background-image: url("images/ADI.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .ctaTitle {
   font-size: 42px;
