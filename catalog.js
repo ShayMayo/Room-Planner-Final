@@ -1,6 +1,11 @@
-// HAMBURGER MENU
-const hamburgerBtn = document.querySelector("#hamburgerBtn");
-const navMenu = document.querySelector(".navLinks");
+ // HAMBURGER TOGGLE
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const navMenu = document.querySelector(".navLinks");
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("nav-active");
+    });
+  }
 // turn the mouse icon into curser icon
 hamburgerBtn.style.cursor = "pointer";
 

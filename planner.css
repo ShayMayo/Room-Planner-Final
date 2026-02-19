@@ -150,7 +150,7 @@ h1 {
     border: 1px solid #cfe3d8;
     border-radius: 8px;
     padding: 10px 15px;
-    font-size: 1fr;
+    font-size: 0.95rem;
     color: #355f4b;
 }
 
@@ -162,19 +162,24 @@ h1 {
 }
 
 .furnitureCard {
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    cursor: grab;
-    transition: all 0.2s;
-    aspect-ratio: 1 / 1;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  cursor: grab;
+  transition: all 0.2s;
+
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+
+  overflow: hidden;     
 }
 
 .furnitureCard:hover {
@@ -185,14 +190,19 @@ h1 {
 
 .furnitureCard span {
     font-size: 45px;
-    margin-bottom: 5px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .furnitureCard .cardLabel {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: #555;
     line-height: 1.2;
+    pointer-events: none;
+
+    height: 2.4em;
+    overflow: hidden;
     pointer-events: none;
 }
 
@@ -513,10 +523,15 @@ footer h3 {
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
     .gridContainer {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-    }
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
 
     .gridBlock {
         font-size: 5vw; /* Scale icons with viewport */
