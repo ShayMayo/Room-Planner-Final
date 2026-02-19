@@ -179,11 +179,12 @@ body {
 
 /* HERO SECTION */
 .ctaSection {
+  min-height: 100vh;
   padding: 90px 20px;
   text-align: center;
   color: #000;
 
-background-image: url("images/ADI.png");
+  background-image: url("images/Roomnew.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
